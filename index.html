@@ -235,11 +235,11 @@
 
       <!-- Step 1 -->
       <div class="step active" id="s-insurance">
-        <div class="step-label">Step 1 of 3</div>
+        <div class="step-label">Step 1 of 2</div>
         <h1 class="step-q">Does your child have Apple Health (Medicaid)?</h1>
         <p class="step-sub">Apple Health is Washington's Medicaid program. It offers free or low-cost insurance for kids who qualify.</p>
         <div class="answers">
-          <button class="ans" onclick="go('s-plan')">Yes, my child has Apple Health</button>
+          <button class="ans" onclick="go('s-zip')">Yes, my child has Apple Health</button>
           <button class="ans" onclick="go('s-no-ins')">No, or I'm not sure <span class="ans-sub">We'll help you figure out next steps</span></button>
         </div>
       </div>
@@ -270,26 +270,8 @@
       </div>
 
       <!-- Step 2 -->
-      <div class="step" id="s-plan">
-        <div class="step-label">Step 2 of 3</div>
-        <h2 class="step-q">Which Apple Health plan is your child on?</h2>
-        <p class="step-sub">Usually on the back of your child's Apple Health card. All plans below cover behavioral health for kids.</p>
-        <div class="answers">
-          <button class="ans" onclick="setPlan('Coordinated Care')">Coordinated Care</button>
-          <button class="ans" onclick="setPlan('CHPW')">Community Health Plan of Washington (CHPW)</button>
-          <button class="ans" onclick="setPlan('Molina')">Molina Healthcare</button>
-          <button class="ans" onclick="setPlan('UHC')">UnitedHealthcare (UHC)</button>
-          <button class="ans" onclick="setPlan('Wellpoint')">Wellpoint (Amerigroup)</button>
-          <button class="ans ans-unsure" onclick="setPlan('Unknown')">I don't know or I'm not sure <span class="ans-sub">We'll show you all nearby providers</span></button>
-        </div>
-        <div class="nav-row">
-          <button class="back" onclick="goBack()">← Back</button>
-        </div>
-      </div>
-
-      <!-- Step 3 -->
       <div class="step" id="s-zip">
-        <div class="step-label">Step 3 of 3</div>
+        <div class="step-label">Step 2 of 2</div>
         <h2 class="step-q">What's your zip code?</h2>
         <p class="step-sub">We'll find the behavioral health agencies closest to you that accept Medicaid and see children.</p>
         <div class="zip-row">
@@ -307,7 +289,7 @@
       <div class="step" id="s-results">
         <div class="res-hdr">
           <h2>Providers near you</h2>
-          <p>These agencies accept Apple Health and see children for behavioral health. Call to ask about availability and whether they're taking new patients.</p>
+          <p>These agencies accept Apple Health and see children for behavioral health. Call to ask about availability, whether they're taking new patients, and whether they accept your specific plan.</p>
         </div>
         <div class="ctx-bar" id="ctx-bar"></div>
         <div class="pc-tip"><strong>Already have a pediatrician?</strong> Call their office first and ask if they have a behavioral health clinician on site. Many do, and it's often the fastest path.</div>
@@ -486,11 +468,9 @@ function show(id) {
 }
 
 // ── Flow state ────────────────────────────────────────────────────────────────
-var flowPlan    = null;
 var flowHistory = [];
 
 function startFlow() {
-  flowPlan    = null;
   flowHistory = ['s-insurance'];
   document.getElementById('zip-in').value = '';
   document.getElementById('zip-err').style.display = 'none';
@@ -513,11 +493,6 @@ function goBack() {
   document.querySelectorAll('#pg-flow .step').forEach(function(s) { s.classList.remove('active'); });
   document.getElementById(prev).classList.add('active');
   window.scrollTo(0, 0);
-}
-
-function setPlan(plan) {
-  flowPlan = plan;
-  go('s-zip');
 }
 
 // ── Zip submission ────────────────────────────────────────────────────────────
@@ -605,11 +580,9 @@ function showResults(userLat, userLng, zip) {
   }).sort(function(a, b) { return a.d - b.d; });
 
   // Context bar
-  var planLabel = { 'Coordinated Care':'Coordinated Care','CHPW':'CHPW','Molina':'Molina Healthcare','UHC':'UnitedHealthcare','Wellpoint':'Wellpoint','Unknown':null };
-  var locText  = zip ? 'Near zip: <span>' + zip + '</span>' : 'Using your location';
-  var planText = (flowPlan && flowPlan !== 'Unknown') ? 'Plan: <span>' + esc(planLabel[flowPlan]) + '</span>' : '';
-  var extra    = planText ? '' : ' &nbsp;·&nbsp; Showing all Apple Health providers';
-  document.getElementById('ctx-bar').innerHTML = [locText, planText].filter(Boolean).join(' &nbsp;·&nbsp; ') + extra;
+  var locText = zip ? 'Near zip: <span>' + zip + '</span>' : 'Using your location';
+  var extra   = ' &nbsp;·&nbsp; Showing all Apple Health providers';
+  document.getElementById('ctx-bar').innerHTML = locText + extra;
 
   // Provider cards
   var list = document.getElementById('prov-list');
