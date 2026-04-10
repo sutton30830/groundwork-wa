@@ -171,8 +171,12 @@
     footer a{color:var(--green);text-underline-offset:2px}
     footer button{background:none;border:none;color:var(--green);cursor:pointer;font-size:.8rem;text-decoration:underline;text-underline-offset:2px;font-family:inherit}
     .interp{display:block;margin-bottom:5px;font-weight:500}
-    .footer-note{display:block;max-width:780px;margin:8px auto 0}
-    .feedback-callout{display:block;max-width:780px;margin:12px auto 0;padding:12px 14px;background:var(--green-light);border:1.5px solid #b8d4ba;border-radius:10px;color:var(--green-dark)}
+    .site-disclaimer{background:var(--white);border-top:1px solid var(--border);padding:28px 20px 36px}
+    .disclaimer-wrap{max-width:780px;margin:0 auto;text-align:left}
+    .disclaimer-wrap h2{font-size:1.05rem;color:var(--green);margin:0 0 12px}
+    .disclaimer-wrap p{font-size:.92rem;color:var(--muted);line-height:1.7;margin:0 0 12px}
+    .disclaimer-wrap p:last-of-type{margin-bottom:0}
+    .feedback-callout{display:block;max-width:780px;margin:16px 0 0;padding:12px 14px;background:var(--green-light);border:1.5px solid #b8d4ba;border-radius:10px;color:var(--green-dark)}
     .feedback-link{display:inline-block;margin-top:8px;padding:9px 14px;background:var(--green);color:#fff !important;text-decoration:none;border-radius:8px;font-weight:700}
     .feedback-link:hover{background:var(--green-dark)}
 
@@ -221,11 +225,7 @@
       </div>
     </div>
   </main>
-  <footer>
-    Free resource for King County families. Not affiliated with King County government.
-    <span class="footer-note">For informational purposes only. This site is based on publicly available data that may change.</span>
-    <span class="feedback-callout">Spot incorrect or outdated information? Let us know through our feedback form.<br><a class="feedback-link" href="https://docs.google.com/forms/d/e/1FAIpQLSefVP_Rb5ckGrLmC2PS44GyZdV1H6e7RbV6s0HvItqcRqcbmg/viewform?usp=preview" target="_blank" rel="noopener">Report an update</a><br>Please do not submit names, dates of birth, insurance details, medical information, or other private health information.</span>
-  </footer>
+  <footer>Free resource for King County families. Not affiliated with King County government.</footer>
 </div>
 
 <!-- ═══ FLOW ═══ -->
@@ -323,8 +323,6 @@
   <footer>
     <span class="interp">Need an interpreter? Tell any provider: <strong>"I need an interpreter"</strong> · <strong>"Necesito un intérprete"</strong> · <strong>"Tôi cần phiên dịch"</strong></span>
     Provider data from King County DCHS · Last verified 2025 · Not affiliated with King County government
-    <span class="footer-note">For informational purposes only. This site is based on publicly available data that may change.</span>
-    <span class="feedback-callout">Spot incorrect or outdated information? Let us know through our feedback form.<br><a class="feedback-link" href="https://docs.google.com/forms/d/e/1FAIpQLSefVP_Rb5ckGrLmC2PS44GyZdV1H6e7RbV6s0HvItqcRqcbmg/viewform?usp=preview" target="_blank" rel="noopener">Report an update</a><br>Please do not submit names, dates of birth, insurance details, medical information, or other private health information.</span>
   </footer>
 </div>
 
@@ -397,8 +395,6 @@
   </main>
   <footer>
     <button onclick="show('flow')">Find a provider</button> · <button onclick="show('referral')">What's a referral?</button>
-    <span class="footer-note">For informational purposes only. This site is based on publicly available data that may change.</span>
-    <span class="feedback-callout">Spot incorrect or outdated information? Let us know through our feedback form.<br><a class="feedback-link" href="https://docs.google.com/forms/d/e/1FAIpQLSefVP_Rb5ckGrLmC2PS44GyZdV1H6e7RbV6s0HvItqcRqcbmg/viewform?usp=preview" target="_blank" rel="noopener">Report an update</a><br>Please do not submit names, dates of birth, insurance details, medical information, or other private health information.</span>
   </footer>
 </div>
 
@@ -460,10 +456,19 @@
   </main>
   <footer>
     <button onclick="show('flow')">Find a provider</button> · <button onclick="show('crisis')">Crisis resources</button>
-    <span class="footer-note">For informational purposes only. This site is based on publicly available data that may change.</span>
-    <span class="feedback-callout">Spot incorrect or outdated information? Let us know through our feedback form.<br><a class="feedback-link" href="https://docs.google.com/forms/d/e/1FAIpQLSefVP_Rb5ckGrLmC2PS44GyZdV1H6e7RbV6s0HvItqcRqcbmg/viewform?usp=preview" target="_blank" rel="noopener">Report an update</a><br>Please do not submit names, dates of birth, insurance details, medical information, or other private health information.</span>
   </footer>
 </div>
+
+<section class="site-disclaimer" aria-labelledby="about-groundwork">
+  <div class="disclaimer-wrap">
+    <h2 id="about-groundwork">About Groundwork</h2>
+    <p>Groundwork is an independent project and is not affiliated with any hospital, healthcare provider, government agency, or insurance plan.</p>
+    <p>This tool is meant to help families find and understand mental health care options. It is for informational purposes only and does not provide medical advice, diagnosis, or treatment.</p>
+    <p>Information may change. Please contact providers directly to confirm services, availability, and insurance coverage.</p>
+    <p>This site is not monitored and should not be used for urgent or emergency needs. If you are in crisis, call 911, 988, or use local crisis services.</p>
+    <span class="feedback-callout">Please do not include personal health information when submitting feedback or updates.<br><a class="feedback-link" href="https://docs.google.com/forms/d/e/1FAIpQLSefVP_Rb5ckGrLmC2PS44GyZdV1H6e7RbV6s0HvItqcRqcbmg/viewform?usp=preview" target="_blank" rel="noopener">Report an update</a></span>
+  </div>
+</section>
 
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
