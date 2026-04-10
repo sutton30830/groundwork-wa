@@ -1,0 +1,1370 @@
+[
+  {
+    "id": "acrs-bellevue",
+    "name": "Asian Counseling and Referral Service",
+    "address": "655 156th Ave SE, Bellevue, WA 98007",
+    "lat": 47.5896,
+    "lng": -122.1354,
+    "phone": "206-695-7600",
+    "services": [
+      "mental_health"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "older_adults"
+    ],
+    "area": "Bellevue",
+    "notes": "",
+    "active": true,
+    "website": "https://acrs.org"
+  },
+  {
+    "id": "acrs-seattle",
+    "name": "Asian Counseling and Referral Service",
+    "address": "3639 Martin Luther King Jr Way S, Seattle, WA 98144",
+    "lat": 47.575,
+    "lng": -122.296,
+    "phone": "206-695-7600",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "older_adults"
+    ],
+    "area": "Seattle – Rainier Valley",
+    "notes": "Substance use services for adults only.",
+    "active": true,
+    "website": "https://acrs.org"
+  },
+  {
+    "id": "atlantic-street",
+    "name": "Atlantic Street Center",
+    "address": "2103 S Atlantic St, Seattle, WA 98144",
+    "lat": 47.5764,
+    "lng": -122.3017,
+    "phone": "206-329-2050",
+    "services": [
+      "mental_health"
+    ],
+    "groups_served": [
+      "adults",
+      "youth"
+    ],
+    "area": "Seattle – Central District",
+    "notes": "",
+    "active": true,
+    "website": "https://www.atlanticstreet.org"
+  },
+  {
+    "id": "chs-lynnwood",
+    "name": "Center for Human Services",
+    "address": "3924 204th Street SW, Lynnwood, WA 98036",
+    "lat": 47.8215,
+    "lng": -122.3022,
+    "phone": "206-362-7282",
+    "services": [
+      "mental_health"
+    ],
+    "groups_served": [
+      "adults",
+      "youth"
+    ],
+    "area": "Lynnwood",
+    "notes": "Temporarily closed due to fire.",
+    "active": false,
+    "website": "https://www.chs-nw.org"
+  },
+  {
+    "id": "chs-bothell",
+    "name": "Center for Human Services",
+    "address": "12900 NE 180th Street, Bothell, WA 98011",
+    "lat": 47.7804,
+    "lng": -122.205,
+    "phone": "206-362-7282",
+    "services": [
+      "mental_health"
+    ],
+    "groups_served": [
+      "adults",
+      "youth"
+    ],
+    "area": "Bothell",
+    "notes": "",
+    "active": true,
+    "website": "https://www.chs-nw.org"
+  },
+  {
+    "id": "chs-edmonds",
+    "name": "Center for Human Services",
+    "address": "21727 76th Ave W, Edmonds, WA 98026",
+    "lat": 47.7993,
+    "lng": -122.3636,
+    "phone": "206-362-7282",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth"
+    ],
+    "area": "Edmonds",
+    "notes": "",
+    "active": true,
+    "website": "https://www.chs-nw.org"
+  },
+  {
+    "id": "chs-shoreline",
+    "name": "Center for Human Services",
+    "address": "14803 15th Ave NE, Shoreline, WA 98155",
+    "lat": 47.7346,
+    "lng": -122.3106,
+    "phone": "206-362-7282",
+    "services": [
+      "mental_health"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "families"
+    ],
+    "area": "Shoreline",
+    "notes": "",
+    "active": true,
+    "website": "https://www.chs-nw.org"
+  },
+  {
+    "id": "akin-renton",
+    "name": "Children's Home Society of Washington (Akin)",
+    "address": "1025 S 3rd St, Renton, WA 98057",
+    "lat": 47.4768,
+    "lng": -122.2131,
+    "phone": "206-248-4903",
+    "services": [
+      "mental_health"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "families"
+    ],
+    "area": "Renton",
+    "notes": "",
+    "active": true,
+    "website": "https://www.childrenshomesociety.org"
+  },
+  {
+    "id": "akin-auburn",
+    "name": "Children's Home Society of Washington (Akin)",
+    "address": "1345 22nd Street NE, Auburn, WA 98002",
+    "lat": 47.3213,
+    "lng": -122.2014,
+    "phone": "206-248-4903",
+    "services": [
+      "mental_health"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "families"
+    ],
+    "area": "Auburn",
+    "notes": "",
+    "active": true,
+    "website": "https://www.childrenshomesociety.org"
+  },
+  {
+    "id": "akin-seattle",
+    "name": "Children's Home Society of Washington (Akin)",
+    "address": "1900 Rainier Avenue South, Seattle, WA 98144",
+    "lat": 47.58,
+    "lng": -122.2959,
+    "phone": "206-248-4903",
+    "services": [
+      "mental_health"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "families"
+    ],
+    "area": "Seattle – Rainier Valley",
+    "notes": "",
+    "active": true,
+    "website": "https://www.childrenshomesociety.org"
+  },
+  {
+    "id": "akin-burien",
+    "name": "Children's Home Society of Washington (Akin)",
+    "address": "1035 SW 124th Street, Seattle, WA 98146",
+    "lat": 47.5032,
+    "lng": -122.3624,
+    "phone": "206-248-4903",
+    "services": [
+      "mental_health"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "families"
+    ],
+    "area": "Burien",
+    "notes": "",
+    "active": true,
+    "website": "https://www.childrenshomesociety.org"
+  },
+  {
+    "id": "consejo-south-park",
+    "name": "Consejo Counseling and Referral Services",
+    "address": "8615 14th Avenue South, Seattle, WA 98108",
+    "lat": 47.534,
+    "lng": -122.3303,
+    "phone": "206-461-4880",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth"
+    ],
+    "area": "Seattle – South Park",
+    "notes": "Primarily serves Hispanic/Latino community, all ages.",
+    "active": true,
+    "website": "https://consejocounseling.org"
+  },
+  {
+    "id": "consejo-lake-city",
+    "name": "Consejo Counseling and Referral Services",
+    "address": "12360 Lake City Way NE, Seattle, WA 98125",
+    "lat": 47.72,
+    "lng": -122.2916,
+    "phone": "206-461-4880",
+    "services": [
+      "mental_health"
+    ],
+    "groups_served": [
+      "adults",
+      "youth"
+    ],
+    "area": "Seattle – Lake City",
+    "notes": "Mental health only. Primarily serves Hispanic/Latino community.",
+    "active": true,
+    "website": "https://consejocounseling.org"
+  },
+  {
+    "id": "consejo-bellevue",
+    "name": "Consejo Counseling and Referral Services",
+    "address": "13343 Bel-Red Road, Bellevue, WA 98005",
+    "lat": 47.6378,
+    "lng": -122.16,
+    "phone": "425-679-0801",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth"
+    ],
+    "area": "Bellevue",
+    "notes": "Primarily serves Hispanic/Latino community, all ages.",
+    "active": true,
+    "website": "https://consejocounseling.org"
+  },
+  {
+    "id": "consejo-renton",
+    "name": "Consejo Counseling and Referral Services",
+    "address": "723 SW 10th Street, Renton, WA 98057",
+    "lat": 47.4741,
+    "lng": -122.2207,
+    "phone": "206-461-4880",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth"
+    ],
+    "area": "Renton",
+    "notes": "Primarily serves Hispanic/Latino community, all ages.",
+    "active": true,
+    "website": "https://consejocounseling.org"
+  },
+  {
+    "id": "eating-recovery-bellevue",
+    "name": "Eating Recovery Center of Washington",
+    "address": "1231 116th Avenue NE, Bellevue, WA 98004",
+    "lat": 47.6204,
+    "lng": -122.17,
+    "phone": "425-214-9321",
+    "services": [
+      "mental_health"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "older_adults"
+    ],
+    "area": "Bellevue",
+    "notes": "Eating disorders only. By referral only.",
+    "active": true,
+    "website": "https://www.eatingrecoverycenter.com/locations/seattle"
+  },
+  {
+    "id": "evergreen-treatment-seattle",
+    "name": "Evergreen Treatment Services",
+    "address": "2133 3rd Ave, Seattle, WA 98121",
+    "lat": 47.6157,
+    "lng": -122.3441,
+    "phone": "206-432-3574",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "older_adults"
+    ],
+    "area": "Seattle – Downtown",
+    "notes": "REACH program. Call ahead.",
+    "active": true,
+    "website": "https://www.evergreentreatment.org"
+  },
+  {
+    "id": "friends-of-youth-northbend",
+    "name": "Friends of Youth",
+    "address": "401 Ballarat Avenue North, North Bend, WA 98045",
+    "lat": 47.4982,
+    "lng": -121.7838,
+    "phone": "425-392-6367",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth"
+    ],
+    "area": "North Bend",
+    "notes": "",
+    "active": true,
+    "website": "https://www.friendsofyouth.org"
+  },
+  {
+    "id": "friends-of-youth-issaquah",
+    "name": "Friends of Youth",
+    "address": "414 Front Street North, Issaquah, WA 98027",
+    "lat": 47.5301,
+    "lng": -122.0325,
+    "phone": "425-392-6367",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth"
+    ],
+    "area": "Issaquah / Eastside",
+    "notes": "",
+    "active": true,
+    "website": "https://www.friendsofyouth.org"
+  },
+  {
+    "id": "kent-youth-family",
+    "name": "Kent Youth and Family Services",
+    "address": "232 2nd Ave S, Kent, WA 98032",
+    "lat": 47.3808,
+    "lng": -122.2357,
+    "phone": "253-859-0300",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "families"
+    ],
+    "area": "Kent",
+    "notes": "",
+    "active": true,
+    "website": "https://www.kyfs.org"
+  },
+  {
+    "id": "evergreenhealth-kirkland",
+    "name": "EvergreenHealth Behavioral Health",
+    "address": "12040 NE 128th Street, Kirkland, WA 98034",
+    "lat": 47.7038,
+    "lng": -122.1842,
+    "phone": "425-899-6300",
+    "services": [
+      "mental_health"
+    ],
+    "groups_served": [
+      "adults",
+      "youth"
+    ],
+    "area": "Kirkland",
+    "notes": "Mental health services available remotely.",
+    "active": true,
+    "website": "https://www.evergreenhealth.com/behavioral-health"
+  },
+  {
+    "id": "kcsarc-renton",
+    "name": "King County Sexual Assault Resource Center",
+    "address": "707 S Grady Way, Renton, WA 98057",
+    "lat": 47.473,
+    "lng": -122.2138,
+    "phone": "425-226-5062",
+    "services": [
+      "mental_health"
+    ],
+    "groups_served": [
+      "adults",
+      "youth"
+    ],
+    "area": "Renton / South King County",
+    "notes": "Services for sexual assault and child sexual abuse survivors.",
+    "active": true,
+    "website": "https://www.kcsarc.org"
+  },
+  {
+    "id": "muckleshoot-tribe",
+    "name": "Muckleshoot Indian Tribe Behavioral Health",
+    "address": "17813 SE 392nd Street, Auburn, WA 98092",
+    "lat": 47.2677,
+    "lng": -122.0722,
+    "phone": "253-333-3605",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth"
+    ],
+    "area": "Auburn",
+    "notes": "Primarily serves Native American/Alaskan Native community.",
+    "active": true,
+    "website": "https://www.muckleshoot.nsn.us/services/health/behavioral-health"
+  },
+  {
+    "id": "navos-west-seattle",
+    "name": "NAVOS",
+    "address": "1210 SW 136th Street, Seattle, WA 98166",
+    "lat": 47.5001,
+    "lng": -122.3623,
+    "phone": "206-257-6601",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth"
+    ],
+    "area": "Seattle – West Seattle",
+    "notes": "Substance use services for adults only.",
+    "active": true,
+    "website": "https://www.navos.org"
+  },
+  {
+    "id": "navos-burien",
+    "name": "NAVOS",
+    "address": "1033 SW 152nd Street, Burien, WA 98166",
+    "lat": 47.4852,
+    "lng": -122.3614,
+    "phone": "206-829-1100",
+    "services": [
+      "mental_health"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "families"
+    ],
+    "area": "Burien",
+    "notes": "",
+    "active": true,
+    "website": "https://www.navos.org"
+  },
+  {
+    "id": "rewa-seatac",
+    "name": "Refugee Women's Alliance (ReWA)",
+    "address": "4800 South 188th St, SeaTac, WA 98188",
+    "lat": 47.444,
+    "lng": -122.2957,
+    "phone": "206-957-2029",
+    "services": [
+      "mental_health"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "families"
+    ],
+    "area": "SeaTac",
+    "notes": "Services for refugee and immigrant populations.",
+    "active": true,
+    "website": "https://www.rewa.org"
+  },
+  {
+    "id": "rewa-kent",
+    "name": "Refugee Women's Alliance (ReWA)",
+    "address": "124 4th Ave S, Kent, WA 98032",
+    "lat": 47.3812,
+    "lng": -122.2344,
+    "phone": "253-204-4705",
+    "services": [
+      "mental_health"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "families"
+    ],
+    "area": "Kent",
+    "notes": "Services for refugee and immigrant populations.",
+    "active": true,
+    "website": "https://www.rewa.org"
+  },
+  {
+    "id": "ryther-seattle",
+    "name": "Ryther",
+    "address": "2400 NE 95th Street, Seattle, WA 98115",
+    "lat": 47.6925,
+    "lng": -122.302,
+    "phone": "206-525-5050",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "families"
+    ],
+    "area": "Seattle – North Seattle",
+    "notes": "",
+    "active": true,
+    "website": "https://www.ryther.org"
+  },
+  {
+    "id": "seamar-federal-way",
+    "name": "SeaMar Behavioral Health",
+    "address": "31405 18th Ave S, Federal Way, WA 98003",
+    "lat": 47.3019,
+    "lng": -122.3298,
+    "phone": "253-681-6640",
+    "services": [
+      "mental_health"
+    ],
+    "groups_served": [
+      "adults",
+      "youth"
+    ],
+    "area": "Federal Way",
+    "notes": "",
+    "active": true,
+    "website": "https://www.seamar.org/behavioral-health.html"
+  },
+  {
+    "id": "seamar-bellevue",
+    "name": "SeaMar Behavioral Health",
+    "address": "1811 156th Ave NE, Bellevue, WA 98005",
+    "lat": 47.6356,
+    "lng": -122.134,
+    "phone": "425-460-7125",
+    "services": [
+      "mental_health"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "families"
+    ],
+    "area": "Bellevue",
+    "notes": "Infant mental health, youth and family services.",
+    "active": true,
+    "website": "https://www.seamar.org/behavioral-health.html"
+  },
+  {
+    "id": "seamar-kent",
+    "name": "SeaMar Behavioral Health",
+    "address": "25028 104th Avenue Southeast, Kent, WA 98030",
+    "lat": 47.3495,
+    "lng": -122.1969,
+    "phone": "206-764-8019",
+    "services": [
+      "mental_health"
+    ],
+    "groups_served": [
+      "adults",
+      "youth"
+    ],
+    "area": "Kent",
+    "notes": "",
+    "active": true,
+    "website": "https://www.seamar.org/behavioral-health.html"
+  },
+  {
+    "id": "seamar-seattle-south",
+    "name": "SeaMar Behavioral Health",
+    "address": "9650 15th Avenue SW, Seattle, WA 98106",
+    "lat": 47.5185,
+    "lng": -122.3611,
+    "phone": "253-681-6640",
+    "services": [
+      "mental_health"
+    ],
+    "groups_served": [
+      "adults",
+      "youth"
+    ],
+    "area": "Seattle – South Seattle",
+    "notes": "",
+    "active": true,
+    "website": "https://www.seamar.org/behavioral-health.html"
+  },
+  {
+    "id": "seneca-tukwila",
+    "name": "Seneca Family of Agencies",
+    "address": "13925 Interurban Ave S, Tukwila, WA 98168",
+    "lat": 47.485,
+    "lng": -122.2753,
+    "phone": "206-473-0319",
+    "services": [
+      "mental_health"
+    ],
+    "groups_served": [
+      "youth",
+      "families"
+    ],
+    "area": "Tukwila",
+    "notes": "Youth and family services only.",
+    "active": true,
+    "website": "https://www.senecafoa.org"
+  },
+  {
+    "id": "snoqualmie-tribe",
+    "name": "Snoqualmie Tribe Behavioral Health",
+    "address": "9450 Ethan Wade Way SE, Snoqualmie, WA 98065",
+    "lat": 47.5295,
+    "lng": -121.8346,
+    "phone": "425-653-4913",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth"
+    ],
+    "area": "East King County",
+    "notes": "Primarily serves Native American/Alaskan Native community.",
+    "active": true,
+    "website": "https://www.snoqualmietribe.us/departments/health"
+  },
+  {
+    "id": "sound-lake-city",
+    "name": "Sound",
+    "address": "11000 Lake City Way NE, Seattle, WA 98125",
+    "lat": 47.719,
+    "lng": -122.2915,
+    "phone": "206-545-2303",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "families"
+    ],
+    "area": "Seattle – North Seattle",
+    "notes": "",
+    "active": true,
+    "website": "https://www.sound.health"
+  },
+  {
+    "id": "sound-bellevue",
+    "name": "Sound",
+    "address": "13555 Bel-Red Road, Bellevue, WA 98052",
+    "lat": 47.6378,
+    "lng": -122.1538,
+    "phone": "206-302-2852",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth"
+    ],
+    "area": "Bellevue",
+    "notes": "",
+    "active": true,
+    "website": "https://www.sound.health"
+  },
+  {
+    "id": "sound-redmond",
+    "name": "Sound",
+    "address": "16225 NE 87th Street, Redmond, WA 98052",
+    "lat": 47.6617,
+    "lng": -122.1183,
+    "phone": "206-302-2852",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "older_adults",
+      "families"
+    ],
+    "area": "Redmond",
+    "notes": "",
+    "active": true,
+    "website": "https://www.sound.health"
+  },
+  {
+    "id": "sound-downtown",
+    "name": "Sound",
+    "address": "2329 4th Ave, Seattle, WA 98121",
+    "lat": 47.6157,
+    "lng": -122.3448,
+    "phone": "206-683-0414",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "families"
+    ],
+    "area": "Seattle – Downtown",
+    "notes": "",
+    "active": true,
+    "website": "https://www.sound.health"
+  },
+  {
+    "id": "sound-kent",
+    "name": "Sound",
+    "address": "841 Central Avenue, Kent, WA 98032",
+    "lat": 47.3951,
+    "lng": -122.2361,
+    "phone": "206-302-2370",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth"
+    ],
+    "area": "Kent",
+    "notes": "",
+    "active": true,
+    "website": "https://www.sound.health"
+  },
+  {
+    "id": "sound-capitol-hill",
+    "name": "Sound",
+    "address": "600 Broadway, Seattle, WA 98122",
+    "lat": 47.6166,
+    "lng": -122.3205,
+    "phone": "206-302-2615",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "older_adults",
+      "families"
+    ],
+    "area": "Seattle – Capitol Hill",
+    "notes": "",
+    "active": true,
+    "website": "https://www.sound.health"
+  },
+  {
+    "id": "sound-auburn-1",
+    "name": "Sound",
+    "address": "4240 Auburn Way North, Auburn, WA 98002",
+    "lat": 47.3235,
+    "lng": -122.1986,
+    "phone": "253-876-7660",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth"
+    ],
+    "area": "Auburn",
+    "notes": "",
+    "active": true,
+    "website": "https://www.sound.health"
+  },
+  {
+    "id": "sound-rainier-youth",
+    "name": "Sound",
+    "address": "1900 Rainier Avenue South, Seattle, WA 98144",
+    "lat": 47.5802,
+    "lng": -122.2958,
+    "phone": "206-302-2852",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "youth"
+    ],
+    "area": "Seattle – Rainier Valley",
+    "notes": "Youth services only.",
+    "active": true,
+    "website": "https://www.sound.health"
+  },
+  {
+    "id": "sound-lgbtq-snoqualmie",
+    "name": "Sound – LGBTQ Youth Services",
+    "address": "7713 Center Blvd SE, Snoqualmie, WA 98065",
+    "lat": 47.5246,
+    "lng": -121.845,
+    "phone": "425-653-4913",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "youth"
+    ],
+    "area": "Snoqualmie",
+    "notes": "LGBTQ youth services.",
+    "active": true,
+    "website": "https://www.sound.health"
+  },
+  {
+    "id": "sound-northgate",
+    "name": "Sound",
+    "address": "10700 Meridian Avenue N, Seattle, WA 98133",
+    "lat": 47.705,
+    "lng": -122.324,
+    "phone": "206-545-2303",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "families"
+    ],
+    "area": "Seattle – Northgate",
+    "notes": "",
+    "active": true,
+    "website": "https://www.sound.health"
+  },
+  {
+    "id": "sound-auburn-2",
+    "name": "Sound",
+    "address": "4238 Auburn Way North, Auburn, WA 98002",
+    "lat": 47.3233,
+    "lng": -122.1988,
+    "phone": "253-876-7660",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "older_adults"
+    ],
+    "area": "Auburn",
+    "notes": "",
+    "active": true,
+    "website": "https://www.sound.health"
+  },
+  {
+    "id": "sound-tukwila-1",
+    "name": "Sound",
+    "address": "6101 Southcenter Blvd, Tukwila, WA 98188",
+    "lat": 47.4686,
+    "lng": -122.2587,
+    "phone": "253-876-7660",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "families"
+    ],
+    "area": "Tukwila",
+    "notes": "",
+    "active": true,
+    "website": "https://www.sound.health"
+  },
+  {
+    "id": "sound-tukwila-2",
+    "name": "Sound",
+    "address": "6400 Southcenter Blvd, Tukwila, WA 98188",
+    "lat": 47.4682,
+    "lng": -122.2581,
+    "phone": "253-876-7660",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "families"
+    ],
+    "area": "Tukwila",
+    "notes": "",
+    "active": true,
+    "website": "https://www.sound.health"
+  },
+  {
+    "id": "swyfs",
+    "name": "Southwest Youth and Family Services",
+    "address": "4555 Delridge Way SW, Seattle, WA 98106",
+    "lat": 47.5499,
+    "lng": -122.364,
+    "phone": "206-937-7680",
+    "services": [
+      "mental_health"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "families"
+    ],
+    "area": "West Seattle / Burien",
+    "notes": "Open to all King County residents.",
+    "active": true,
+    "website": "https://www.swyfs.org"
+  },
+  {
+    "id": "ths-kent",
+    "name": "Therapeutic Health Services",
+    "address": "24823 Pacific Highway South, Kent, WA 98032",
+    "lat": 47.3658,
+    "lng": -122.2941,
+    "phone": "253-681-0010",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth"
+    ],
+    "area": "Kent",
+    "notes": "",
+    "active": true,
+    "website": "https://www.therapeutichealthservices.org"
+  },
+  {
+    "id": "ths-seattle",
+    "name": "Therapeutic Health Services",
+    "address": "1901 Martin Luther King Jr Way South, Seattle, WA 98144",
+    "lat": 47.577,
+    "lng": -122.3,
+    "phone": "206-726-7585",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "youth",
+      "families"
+    ],
+    "area": "Seattle – Central District",
+    "notes": "",
+    "active": true,
+    "website": "https://www.therapeutichealthservices.org"
+  },
+  {
+    "id": "vc-seattle-downtown",
+    "name": "Valley Cities Counseling and Consultation",
+    "address": "1537 Western Avenue, Seattle, WA 98101",
+    "lat": 47.6084,
+    "lng": -122.3449,
+    "phone": "253-833-7444",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth"
+    ],
+    "area": "Seattle – Downtown",
+    "notes": "Substance use services for adults only.",
+    "active": true,
+    "website": "https://www.valleycities.org"
+  },
+  {
+    "id": "vc-des-moines",
+    "name": "Valley Cities Counseling and Consultation",
+    "address": "26401 Pacific Highway South, Des Moines, WA 98198",
+    "lat": 47.3908,
+    "lng": -122.3134,
+    "phone": "253-833-7444",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "older_adults",
+      "families"
+    ],
+    "area": "Des Moines",
+    "notes": "Substance use services for adults only.",
+    "active": true,
+    "website": "https://www.valleycities.org"
+  },
+  {
+    "id": "vc-renton",
+    "name": "Valley Cities Counseling and Consultation",
+    "address": "221 Wells Avenue South, Renton, WA 98057",
+    "lat": 47.4796,
+    "lng": -122.2094,
+    "phone": "253-833-7444",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "older_adults",
+      "families"
+    ],
+    "area": "Renton",
+    "notes": "Substance use services for adults only.",
+    "active": true,
+    "website": "https://www.valleycities.org"
+  },
+  {
+    "id": "vc-north-seattle",
+    "name": "Valley Cities Counseling and Consultation",
+    "address": "10521 Meridian Avenue North, Seattle, WA 98133",
+    "lat": 47.7034,
+    "lng": -122.3249,
+    "phone": "253-833-7444",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "older_adults",
+      "families"
+    ],
+    "area": "Seattle – North Seattle",
+    "notes": "Substance use services for adults only.",
+    "active": true,
+    "website": "https://www.valleycities.org"
+  },
+  {
+    "id": "vc-auburn",
+    "name": "Valley Cities Counseling and Consultation",
+    "address": "2704 I Street NE, Auburn, WA 98002",
+    "lat": 47.3235,
+    "lng": -122.182,
+    "phone": "253-833-7444",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "older_adults",
+      "families"
+    ],
+    "area": "Auburn",
+    "notes": "Substance use services for adults only.",
+    "active": true,
+    "website": "https://www.valleycities.org"
+  },
+  {
+    "id": "vc-rainier",
+    "name": "Valley Cities Counseling and Consultation",
+    "address": "8444 Rainier Avenue South, Seattle, WA 98118",
+    "lat": 47.5432,
+    "lng": -122.279,
+    "phone": "253-833-7444",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "older_adults",
+      "families"
+    ],
+    "area": "Seattle – South Seattle",
+    "notes": "Substance use services for adults only.",
+    "active": true,
+    "website": "https://www.valleycities.org"
+  },
+  {
+    "id": "vc-federal-way",
+    "name": "Valley Cities Counseling and Consultation",
+    "address": "1336 South 336th Street, Federal Way, WA 98003",
+    "lat": 47.3048,
+    "lng": -122.3135,
+    "phone": "253-833-7444",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "older_adults",
+      "families"
+    ],
+    "area": "Federal Way",
+    "notes": "Substance use services for adults only.",
+    "active": true,
+    "website": "https://www.valleycities.org"
+  },
+  {
+    "id": "vc-kent",
+    "name": "Valley Cities Counseling and Consultation",
+    "address": "325 West Gowe Street, Kent, WA 98032",
+    "lat": 47.3784,
+    "lng": -122.2397,
+    "phone": "253-833-7444",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "older_adults",
+      "families"
+    ],
+    "area": "Kent",
+    "notes": "Substance use services for adults only.",
+    "active": true,
+    "website": "https://www.valleycities.org"
+  },
+  {
+    "id": "vc-enumclaw",
+    "name": "Valley Cities Counseling and Consultation",
+    "address": "1335 Cole Street, Enumclaw, WA 98022",
+    "lat": 47.2033,
+    "lng": -121.9941,
+    "phone": "253-833-7444",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "older_adults",
+      "families"
+    ],
+    "area": "Enumclaw",
+    "notes": "Substance use services for adults only.",
+    "active": true,
+    "website": "https://www.valleycities.org"
+  },
+  {
+    "id": "vc-northgate",
+    "name": "Valley Cities Counseling and Consultation",
+    "address": "929 N 130th St, Seattle, WA 98133",
+    "lat": 47.7175,
+    "lng": -122.3421,
+    "phone": "253-833-7444",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth"
+    ],
+    "area": "Seattle – North Seattle",
+    "notes": "Substance use services for adults only.",
+    "active": true,
+    "website": "https://www.valleycities.org"
+  },
+  {
+    "id": "vashon-youth-family",
+    "name": "Vashon Youth and Family Services",
+    "address": "20110 Vashon Hwy SW, Vashon, WA 98070",
+    "lat": 47.4432,
+    "lng": -122.4659,
+    "phone": "206-463-5511",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "older_adults"
+    ],
+    "area": "Vashon Island",
+    "notes": "Substance use services for adults only.",
+    "active": true,
+    "website": "https://www.vashonyouthandfamily.org"
+  },
+  {
+    "id": "ymca-seattle",
+    "name": "YMCA of Greater Seattle",
+    "address": "2100 24th Ave S, Seattle, WA 98144",
+    "lat": 47.5811,
+    "lng": -122.2939,
+    "phone": "206-382-5340",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "older_adults",
+      "families"
+    ],
+    "area": "Seattle – Central District",
+    "notes": "",
+    "active": true,
+    "website": "https://www.seattleymca.org/behavioral-health"
+  },
+  {
+    "id": "ymca-auburn",
+    "name": "YMCA of Greater Seattle",
+    "address": "1000 Auburn Way South, Auburn, WA 98002",
+    "lat": 47.3029,
+    "lng": -122.2115,
+    "phone": "253-740-7189",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "older_adults",
+      "families"
+    ],
+    "area": "Auburn",
+    "notes": "",
+    "active": true,
+    "website": "https://www.seattleymca.org/behavioral-health"
+  },
+  {
+    "id": "ymca-enumclaw",
+    "name": "YMCA of Greater Seattle",
+    "address": "1356 Cole Street, Enumclaw, WA 98022",
+    "lat": 47.2034,
+    "lng": -121.9942,
+    "phone": "360-825-4586",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "older_adults",
+      "families"
+    ],
+    "area": "Enumclaw",
+    "notes": "Crisis services for youth and special populations.",
+    "active": true,
+    "website": "https://www.seattleymca.org/behavioral-health"
+  },
+  {
+    "id": "yes-kirkland",
+    "name": "Youth Eastside Services",
+    "address": "11829 97th Avenue NE, Kirkland, WA 98034",
+    "lat": 47.7201,
+    "lng": -122.1835,
+    "phone": "425-747-4937",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "families"
+    ],
+    "area": "Kirkland",
+    "notes": "",
+    "active": true,
+    "website": "https://www.youtheastsideservices.org"
+  },
+  {
+    "id": "yes-bellevue",
+    "name": "Youth Eastside Services",
+    "address": "999 164th Ave NE, Bellevue, WA 98008",
+    "lat": 47.6,
+    "lng": -122.1248,
+    "phone": "425-747-4937",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "families"
+    ],
+    "area": "Bellevue",
+    "notes": "",
+    "active": true,
+    "website": "https://www.youtheastsideservices.org"
+  },
+  {
+    "id": "yes-redmond",
+    "name": "Youth Eastside Services",
+    "address": "15600 Redmond Way, Redmond, WA 98052",
+    "lat": 47.6704,
+    "lng": -122.131,
+    "phone": "425-747-7937",
+    "services": [
+      "mental_health",
+      "substance_use"
+    ],
+    "groups_served": [
+      "adults",
+      "youth",
+      "families"
+    ],
+    "area": "Redmond / Eastside",
+    "notes": "",
+    "active": true,
+    "website": "https://www.youtheastsideservices.org"
+  }
+]
