@@ -168,8 +168,13 @@
 
     /* Footer */
     footer{background:var(--white);border-top:1px solid var(--border);padding:18px 20px;font-size:.8rem;color:var(--muted);text-align:center;line-height:1.7;flex-shrink:0}
+    footer a{color:var(--green);text-underline-offset:2px}
     footer button{background:none;border:none;color:var(--green);cursor:pointer;font-size:.8rem;text-decoration:underline;text-underline-offset:2px;font-family:inherit}
     .interp{display:block;margin-bottom:5px;font-weight:500}
+    .footer-note{display:block;max-width:780px;margin:8px auto 0}
+    .feedback-callout{display:block;max-width:780px;margin:12px auto 0;padding:12px 14px;background:var(--green-light);border:1.5px solid #b8d4ba;border-radius:10px;color:var(--green-dark)}
+    .feedback-link{display:inline-block;margin-top:8px;padding:9px 14px;background:var(--green);color:#fff !important;text-decoration:none;border-radius:8px;font-weight:700}
+    .feedback-link:hover{background:var(--green-dark)}
 
     /* Mobile */
     @media(max-width:480px){
@@ -216,7 +221,11 @@
       </div>
     </div>
   </main>
-  <footer>Free resource for King County families. Not affiliated with King County government.</footer>
+  <footer>
+    Free resource for King County families. Not affiliated with King County government.
+    <span class="footer-note">For informational purposes only. This site is based on publicly available data that may change.</span>
+    <span class="feedback-callout">Spot incorrect or outdated information? Let us know through our feedback form.<br><a class="feedback-link" href="https://docs.google.com/forms/d/e/1FAIpQLSefVP_Rb5ckGrLmC2PS44GyZdV1H6e7RbV6s0HvItqcRqcbmg/viewform?usp=preview" target="_blank" rel="noopener">Report an update</a><br>Please do not submit names, dates of birth, insurance details, medical information, or other private health information.</span>
+  </footer>
 </div>
 
 <!-- ═══ FLOW ═══ -->
@@ -314,6 +323,8 @@
   <footer>
     <span class="interp">Need an interpreter? Tell any provider: <strong>"I need an interpreter"</strong> · <strong>"Necesito un intérprete"</strong> · <strong>"Tôi cần phiên dịch"</strong></span>
     Provider data from King County DCHS · Last verified 2025 · Not affiliated with King County government
+    <span class="footer-note">For informational purposes only. This site is based on publicly available data that may change.</span>
+    <span class="feedback-callout">Spot incorrect or outdated information? Let us know through our feedback form.<br><a class="feedback-link" href="https://docs.google.com/forms/d/e/1FAIpQLSefVP_Rb5ckGrLmC2PS44GyZdV1H6e7RbV6s0HvItqcRqcbmg/viewform?usp=preview" target="_blank" rel="noopener">Report an update</a><br>Please do not submit names, dates of birth, insurance details, medical information, or other private health information.</span>
   </footer>
 </div>
 
@@ -384,7 +395,11 @@
     </div>
     <div style="margin-top:28px"><button class="back" onclick="show('flow')">← Find an outpatient provider</button></div>
   </main>
-  <footer><button onclick="show('flow')">Find a provider</button> · <button onclick="show('referral')">What's a referral?</button></footer>
+  <footer>
+    <button onclick="show('flow')">Find a provider</button> · <button onclick="show('referral')">What's a referral?</button>
+    <span class="footer-note">For informational purposes only. This site is based on publicly available data that may change.</span>
+    <span class="feedback-callout">Spot incorrect or outdated information? Let us know through our feedback form.<br><a class="feedback-link" href="https://docs.google.com/forms/d/e/1FAIpQLSefVP_Rb5ckGrLmC2PS44GyZdV1H6e7RbV6s0HvItqcRqcbmg/viewform?usp=preview" target="_blank" rel="noopener">Report an update</a><br>Please do not submit names, dates of birth, insurance details, medical information, or other private health information.</span>
+  </footer>
 </div>
 
 <!-- ═══ REFERRAL ═══ -->
@@ -443,7 +458,11 @@
       <button class="cta-btn" onclick="startFlow()">Find providers near me</button>
     </div>
   </main>
-  <footer><button onclick="show('flow')">Find a provider</button> · <button onclick="show('crisis')">Crisis resources</button></footer>
+  <footer>
+    <button onclick="show('flow')">Find a provider</button> · <button onclick="show('crisis')">Crisis resources</button>
+    <span class="footer-note">For informational purposes only. This site is based on publicly available data that may change.</span>
+    <span class="feedback-callout">Spot incorrect or outdated information? Let us know through our feedback form.<br><a class="feedback-link" href="https://docs.google.com/forms/d/e/1FAIpQLSefVP_Rb5ckGrLmC2PS44GyZdV1H6e7RbV6s0HvItqcRqcbmg/viewform?usp=preview" target="_blank" rel="noopener">Report an update</a><br>Please do not submit names, dates of birth, insurance details, medical information, or other private health information.</span>
+  </footer>
 </div>
 
 <script>
