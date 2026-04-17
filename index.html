@@ -90,6 +90,11 @@
     .ctx-bar span{font-weight:600}
     .res-hdr{margin-bottom:24px}
     .pc-tip{background:#fff8e6;border:1px solid #f0d080;border-radius:8px;padding:12px 16px;font-size:.88rem;line-height:1.5;color:#5a4a00;margin-bottom:18px}
+    .call-script{background:var(--white);border:2px solid var(--border);border-radius:var(--radius);padding:18px 20px;margin-bottom:18px}
+    .call-script h3{font-size:.95rem;font-weight:700;margin-bottom:8px}
+    .call-script p{font-size:.9rem;color:var(--muted);line-height:1.6;margin:0 0 8px}
+    .call-script p:last-child{margin-bottom:0}
+    .call-script strong{color:var(--text)}
     .show-more-btn{display:block;width:100%;margin-top:8px;padding:14px;background:var(--white);border:2px dashed var(--border);border-radius:var(--radius);font-size:.95rem;font-weight:600;color:var(--green);cursor:pointer;text-align:center;transition:border-color .15s}
     .show-more-btn:hover{border-color:var(--green)}
     .res-hdr h2{font-size:1.4rem;font-weight:700;margin-bottom:6px}
@@ -293,6 +298,11 @@
         </div>
         <div class="ctx-bar" id="ctx-bar"></div>
         <div class="pc-tip"><strong>Already have a pediatrician?</strong> Call their office first and ask if they have a behavioral health clinician on site. Many do, and it's often the fastest path.</div>
+        <div class="call-script">
+          <h3>What to say when you call</h3>
+          <p><strong>You can keep it simple:</strong> "Hi, I'm calling about behavioral health services for my child. They have Apple Health. Are you taking new pediatric patients, and do you accept their plan?"</p>
+          <p>If it helps, ask one question at a time. You do not need to explain everything on the first call.</p>
+        </div>
         <div class="prov-list" id="prov-list"></div>
         <div class="nav-row">
           <button class="back" onclick="goBack()">← Change zip code</button>
