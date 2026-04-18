@@ -622,7 +622,22 @@ function reverseGeocodeCurrentLocation(lat, lng) {
       if (!data || !data.display_name) {
         throw new Error();
       }
-      return data.display_name;
+      var addr = data.address || {};
+      var line1 = [
+        addr.house_number,
+        addr.road || addr.pedestrian || addr.cycleway || addr.footway
+      ].filter(Boolean).join(' ').trim();
+      if (!line1) {
+        line1 = addr.building || addr.amenity || addr.shop || addr.leisure || addr.tourism || addr.attraction || '';
+      }
+
+      var city = addr.city || addr.town || addr.village || addr.municipality || addr.hamlet || '';
+      var state = addr.state || '';
+      var postcode = addr.postcode || '';
+      var line2 = [city, state, postcode].filter(Boolean).join(', ').replace(/, ([A-Z]{2})\, /, ', $1 ');
+
+      var label = [line1, line2].filter(Boolean).join(', ').trim();
+      return label || data.display_name;
     });
 }
 
