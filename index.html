@@ -111,6 +111,30 @@
     .prov-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
     .call-btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:16px 22px;background:var(--green);color:#fff;border-radius:8px;font-size:1.2rem;font-weight:700;text-decoration:none;transition:background .15s;width:100%;margin-bottom:10px}
     .call-btn:hover{background:var(--green-dark)}
+    .feedback-wrap{margin-top:6px;padding-top:14px;border-top:.5px solid var(--border)}
+    .feedback-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .feedback-label{font-size:.9rem;font-weight:600;color:var(--muted);margin-right:auto}
+    .feedback-btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border:1px solid var(--border);border-radius:20px;background:var(--white);color:var(--text);font-size:.95rem;font-weight:600;cursor:pointer;font-family:inherit;transition:background .15s,border-color .15s,color .15s}
+    .feedback-btn:hover{border-color:var(--green)}
+    .feedback-btn.active-good{background:#e7f3e8;border-color:#8fba92;color:#245228}
+    .feedback-btn.active-bad{background:#fbe9e7;border-color:#e1aaa2;color:#a13a30}
+    .feedback-detail{margin-top:14px}
+    .feedback-q{font-size:.88rem;color:var(--muted);margin-bottom:10px}
+    .feedback-chips{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .feedback-chip{display:flex;align-items:center;justify-content:center;min-height:44px;padding:10px 12px;border:.5px solid var(--border);border-radius:12px;background:#f6f4ef;color:var(--text);font-size:.9rem;font-weight:500;cursor:pointer;font-family:inherit;text-align:center;transition:background .15s,border-color .15s,color .15s}
+    .feedback-chip:hover{border-color:var(--green)}
+    .feedback-chip.good-active{background:#edf7ee;border-color:#8fba92;color:#245228}
+    .feedback-chip.bad-active{background:#fff0ee;border-color:#e1aaa2;color:#a13a30}
+    .feedback-chip.other{grid-column:1 / -1}
+    .feedback-other{margin-top:10px}
+    .feedback-other input{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:10px;background:var(--white);font-size:.95rem;font-family:inherit;color:var(--text)}
+    .feedback-other input:focus{outline:none;border-color:var(--green)}
+    .feedback-confirm{margin-top:12px;padding:10px 14px;background:#e7f3e8;color:#245228;border-radius:10px;font-size:.9rem;font-weight:500;display:none}
+    .feedback-confirm.show{display:block}
+    .feedback-status{margin-top:10px;font-size:.82rem;color:var(--muted)}
+    .feedback-status.error{color:#b23b2f}
+    .feedback-wrap[aria-busy="true"] .feedback-btn,
+    .feedback-wrap[aria-busy="true"] .feedback-chip{opacity:.7;pointer-events:none}
     .home-resources{max-width:560px;margin:32px auto 0;padding:24px 28px;background:var(--white);border:2px solid var(--border);border-radius:var(--radius);text-align:left}
     .home-resources h2{font-size:1.1rem;color:var(--green);margin:0 0 8px}
     .home-resources p{font-size:.95rem;color:var(--text);margin:0 0 14px;line-height:1.6}
@@ -191,6 +215,8 @@
       .step-q{font-size:1.3rem}.zip-row{flex-direction:column}.zip-btn{width:100%}
       .prov-top{flex-direction:column}
       .hero h1{font-size:1.6rem}
+      .feedback-row{align-items:stretch}
+      .feedback-label{width:100%;margin-right:0}
     }
   </style>
 </head>
@@ -465,9 +491,41 @@
   </div>
 </section>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
 var providers = [];
+var searchContext = { zipCode: null, locationLabel: null };
+var feedbackState = {};
+var feedbackTimers = {};
+var supabaseClient = null;
+var supabaseReady = false;
+var sessionId = null;
+var FEEDBACK_OPTIONS = {
+  got_through: {
+    question: 'What happened next?',
+    reasons: [
+      ['scheduled_something', 'Scheduled something'],
+      ['added_to_waitlist', 'Added to waitlist'],
+      ['turned_away', 'Turned away'],
+      ['need_time_to_think', 'Need time to think'],
+      ['other', 'Other...']
+    ]
+  },
+  no_luck: {
+    question: 'What happened?',
+    reasons: [
+      ['not_taking_new_patients', 'Not taking new patients'],
+      ['waitlist_too_long', 'Waitlist too long'],
+      ['couldnt_reach_anyone', "Couldn't reach anyone"],
+      ['number_didnt_work', "Number didn't work"],
+      ['needed_a_referral', 'Needed a referral'],
+      ['other', 'Other...']
+    ]
+  }
+};
+var SUPABASE_URL = 'https://fxaiustctvfxtolrvabr.supabase.co';
+var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ4YWl1c3RjdHZmeHRvbHJ2YWJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY1MzQzMzIsImV4cCI6MjA5MjExMDMzMn0.VZhwHJv85mL_IzAMGagCvR3DqP96SDi2aj6xrbzcIoU';
 const ZIPCODES  = {"zips":{"98001":[47.3198,-122.2564],"98002":[47.3068,-122.2168],"98003":[47.329,-122.305],"98004":[47.6187,-122.2003],"98005":[47.6138,-122.1689],"98006":[47.5688,-122.1559],"98007":[47.5976,-122.149],"98008":[47.5931,-122.1224],"98010":[47.3218,-122.0017],"98011":[47.7635,-122.2117],"98012":[47.845,-122.2076],"98013":[47.4432,-122.4659],"98014":[47.7026,-121.9032],"98019":[47.737,-121.9565],"98020":[47.8076,-122.3774],"98021":[47.805,-122.2044],"98022":[47.2033,-121.99],"98023":[47.324,-122.368],"98024":[47.5491,-121.9018],"98025":[47.3858,-121.9337],"98026":[47.8103,-122.37],"98027":[47.5368,-122.0466],"98028":[47.7562,-122.2459],"98029":[47.5705,-122.023],"98030":[47.3706,-122.19],"98031":[47.3869,-122.1812],"98032":[47.3882,-122.235],"98033":[47.682,-122.1812],"98034":[47.7255,-122.2084],"98036":[47.8215,-122.3022],"98037":[47.8451,-122.286],"98038":[47.4272,-122.025],"98039":[47.6396,-122.229],"98040":[47.5631,-122.2221],"98042":[47.3596,-122.121],"98043":[47.8215,-122.3022],"98045":[47.5002,-121.7932],"98047":[47.3425,-122.228],"98050":[47.5368,-121.98],"98051":[47.384,-121.9752],"98052":[47.6683,-122.128],"98053":[47.6574,-122.046],"98055":[47.4633,-122.2121],"98056":[47.4984,-122.1867],"98057":[47.481,-122.216],"98058":[47.4467,-122.1441],"98059":[47.5011,-122.1355],"98065":[47.5368,-121.84],"98070":[47.4432,-122.4659],"98072":[47.7562,-122.1522],"98074":[47.6264,-122.0617],"98075":[47.5922,-122.037],"98077":[47.7562,-122.1522],"98087":[47.8689,-122.2576],"98092":[47.2884,-122.1519],"98101":[47.6097,-122.3331],"98102":[47.63,-122.3178],"98103":[47.6736,-122.3437],"98104":[47.6025,-122.3289],"98105":[47.6625,-122.2922],"98106":[47.5385,-122.3625],"98107":[47.6727,-122.3754],"98108":[47.5406,-122.3113],"98109":[47.6362,-122.3538],"98112":[47.6292,-122.2912],"98115":[47.6814,-122.2996],"98116":[47.5713,-122.3905],"98117":[47.688,-122.3799],"98118":[47.551,-122.2765],"98119":[47.64,-122.3738],"98121":[47.6157,-122.3448],"98122":[47.612,-122.3069],"98125":[47.7192,-122.299],"98126":[47.5574,-122.3759],"98133":[47.717,-122.3355],"98134":[47.576,-122.338],"98136":[47.5542,-122.3889],"98144":[47.5939,-122.3014],"98146":[47.5035,-122.3635],"98148":[47.4515,-122.3158],"98155":[47.734,-122.3165],"98158":[47.4515,-122.3158],"98166":[47.493,-122.3606],"98168":[47.49,-122.29],"98177":[47.732,-122.3901],"98178":[47.5097,-122.2459],"98188":[47.4532,-122.295],"98198":[47.3961,-122.318],"98199":[47.651,-122.3968]}};
 
 // ── Page navigation ───────────────────────────────────────────────────────────
@@ -487,6 +545,7 @@ var detectedLocation = null;
 function startFlow() {
   flowHistory = ['s-insurance'];
   detectedLocation = null;
+  searchContext = { zipCode: null, locationLabel: null };
   document.getElementById('zip-in').value = '';
   document.getElementById('zip-err').style.display = 'none';
   document.querySelectorAll('#pg-flow .step').forEach(function(s) { s.classList.remove('active'); });
@@ -530,11 +589,13 @@ function submitZip() {
       errEl.style.display = 'block';
       return;
     }
+    searchContext = { zipCode: raw, locationLabel: raw };
     showResults(coords[0], coords[1], raw);
     return;
   }
 
   if (detectedLocation && raw === detectedLocation.inputValue) {
+    searchContext = { zipCode: detectedLocation.zipCode || extractZip(raw), locationLabel: detectedLocation.label };
     showResults(detectedLocation.lat, detectedLocation.lng, detectedLocation.label);
     return;
   }
@@ -542,6 +603,7 @@ function submitZip() {
   geocodeAddress(raw)
     .then(function(match) {
       detectedLocation = null;
+      searchContext = { zipCode: extractZip(match.label) || extractZip(raw), locationLabel: match.label };
       showResults(match.lat, match.lng, match.label);
     })
     .catch(function(message) {
@@ -636,6 +698,11 @@ function geocodeAddress(address) {
   });
 }
 
+function extractZip(text) {
+  var match = String(text || '').match(/\b\d{5}(?:-\d{4})?\b/);
+  return match ? match[0].slice(0, 5) : null;
+}
+
 function reverseGeocodeCurrentLocation(lat, lng) {
   return fetch(
     'https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=' +
@@ -691,7 +758,8 @@ function useLocation() {
             lat: lat,
             lng: lng,
             label: label,
-            inputValue: label
+            inputValue: label,
+            zipCode: extractZip(label)
           };
           input.value = label;
           document.getElementById('zip-err').style.display = 'none';
@@ -703,7 +771,8 @@ function useLocation() {
             lat: lat,
             lng: lng,
             label: 'your current location',
-            inputValue: 'Current location detected'
+            inputValue: 'Current location detected',
+            zipCode: null
           };
           input.value = detectedLocation.inputValue;
           document.getElementById('zip-err').style.display = 'none';
@@ -755,6 +824,7 @@ function showResults(userLat, userLng, locationLabel) {
     var notes   = p.notes ? '<div class="prov-notes">' + esc(p.notes) + '</div>' : '';
     var phone   = p.phone.replace(/[^0-9]/g, '');
     var maps    = 'https://maps.google.com/?q=' + encodeURIComponent(p.address);
+    var feedback = renderFeedback(p.id);
     return '<div class="prov-card">' +
       '<div class="prov-top">' +
         '<div class="prov-name">' + esc(p.name) + '</div>' +
@@ -768,7 +838,7 @@ function showResults(userLat, userLng, locationLabel) {
         '<a class="dir-link" href="' + maps + '" target="_blank" rel="noopener">Get directions</a>' +
         (p.website ? '<a class="web-link" href="' + esc(p.website) + '" target="_blank" rel="noopener">Website</a>' : '') +
         (p.intake_form_url ? '<a class="web-link" href="' + esc(p.intake_form_url) + '" target="_blank" rel="noopener">Intake form</a>' : '') +
-      '</div>' +
+      '</div>' + feedback +
     '</div>';
   }
 
@@ -788,6 +858,232 @@ function showResults(userLat, userLng, locationLabel) {
   go('s-results');
 }
 
+function ensureFeedbackState(providerId) {
+  if (!feedbackState[providerId]) {
+    feedbackState[providerId] = {
+      outcome: null,
+      openOutcome: null,
+      selectedReason: null,
+      status: '',
+      statusType: '',
+      confirmVisible: false,
+      busy: false,
+      otherOpen: false,
+      otherText: ''
+    };
+  }
+  return feedbackState[providerId];
+}
+
+function renderFeedback(providerId) {
+  var state = ensureFeedbackState(providerId);
+  var detail = '';
+  if (state.openOutcome) {
+    var config = FEEDBACK_OPTIONS[state.openOutcome];
+    var chips = config.reasons.map(function(entry) {
+      var code = entry[0];
+      var label = entry[1];
+      var activeClass = state.selectedReason === code ? (state.openOutcome === 'got_through' ? ' good-active' : ' bad-active') : '';
+      var otherClass = code === 'other' ? ' other' : '';
+      return '<button class="feedback-chip' + activeClass + otherClass + '" type="button" data-feedback-chip="' + esc(code) + '" data-provider-id="' + esc(providerId) + '" data-outcome="' + esc(state.openOutcome) + '" aria-pressed="' + (state.selectedReason === code ? 'true' : 'false') + '">' + esc(label) + '</button>';
+    }).join('');
+    var otherInput = '';
+    if (state.otherOpen) {
+      otherInput = '<div class="feedback-other"><input type="text" maxlength="200" placeholder="Add a quick note" value="' + esc(state.otherText) + '" data-feedback-other="' + esc(providerId) + '" aria-label="Optional feedback detail"></div>';
+    }
+    detail = '<div class="feedback-detail">' +
+      '<div class="feedback-q">' + esc(config.question) + '</div>' +
+      '<div class="feedback-chips">' + chips + '</div>' +
+      otherInput +
+      '</div>';
+  }
+  var status = state.status ? '<div class="feedback-status' + (state.statusType === 'error' ? ' error' : '') + '">' + esc(state.status) + '</div>' : '';
+  var confirm = '<div class="feedback-confirm' + (state.confirmVisible ? ' show' : '') + '">Thanks - this helps other families find care.</div>';
+  return '<div class="feedback-wrap" data-feedback="' + esc(providerId) + '" aria-busy="' + (state.busy ? 'true' : 'false') + '">' +
+    '<div class="feedback-row">' +
+      '<div class="feedback-label">How did it go?</div>' +
+      '<button class="feedback-btn' + (state.outcome === 'got_through' ? ' active-good' : '') + '" type="button" data-feedback-outcome="got_through" data-provider-id="' + esc(providerId) + '" aria-pressed="' + (state.outcome === 'got_through' ? 'true' : 'false') + '">Got through</button>' +
+      '<button class="feedback-btn' + (state.outcome === 'no_luck' ? ' active-bad' : '') + '" type="button" data-feedback-outcome="no_luck" data-provider-id="' + esc(providerId) + '" aria-pressed="' + (state.outcome === 'no_luck' ? 'true' : 'false') + '">No luck</button>' +
+    '</div>' +
+    detail + status + confirm +
+    '</div>';
+}
+
+function rerenderFeedback(providerId) {
+  var wrap = document.querySelector('[data-feedback="' + providerId + '"]');
+  if (!wrap) return;
+  wrap.outerHTML = renderFeedback(providerId);
+}
+
+function setFeedbackStatus(providerId, text, type) {
+  var state = ensureFeedbackState(providerId);
+  state.status = text || '';
+  state.statusType = type || '';
+  rerenderFeedback(providerId);
+}
+
+function showFeedbackConfirmation(providerId) {
+  var state = ensureFeedbackState(providerId);
+  state.confirmVisible = true;
+  state.openOutcome = null;
+  state.selectedReason = null;
+  state.otherOpen = false;
+  state.otherText = '';
+  state.status = '';
+  state.statusType = '';
+  if (feedbackTimers[providerId]) window.clearTimeout(feedbackTimers[providerId]);
+  feedbackTimers[providerId] = window.setTimeout(function() {
+    state.confirmVisible = false;
+    rerenderFeedback(providerId);
+  }, 2500);
+  rerenderFeedback(providerId);
+}
+
+function getSessionId() {
+  if (sessionId) return sessionId;
+  var key = 'gw_session_id';
+  try {
+    sessionId = window.localStorage.getItem(key);
+    if (!sessionId) {
+      sessionId = (window.crypto && window.crypto.randomUUID) ? window.crypto.randomUUID() : 'gw-' + Date.now() + '-' + Math.floor(Math.random() * 1000000);
+      window.localStorage.setItem(key, sessionId);
+    }
+  } catch (e) {
+    sessionId = 'gw-' + Date.now() + '-' + Math.floor(Math.random() * 1000000);
+  }
+  return sessionId;
+}
+
+function initSupabase() {
+  if (supabaseReady || !window.supabase) return;
+  supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  supabaseReady = true;
+}
+
+function localFeedbackDuplicate(providerId, outcome, reason) {
+  var key = 'gw_feedback_recent';
+  var now = Date.now();
+  try {
+    var entries = JSON.parse(window.localStorage.getItem(key) || '[]').filter(function(entry) {
+      return now - entry.ts < 60000;
+    });
+    var duplicate = entries.some(function(entry) {
+      return entry.provider_id === providerId && entry.outcome === outcome && entry.reason === reason;
+    });
+    if (!duplicate) {
+      entries.push({ provider_id: providerId, outcome: outcome, reason: reason, ts: now });
+      window.localStorage.setItem(key, JSON.stringify(entries));
+    }
+    return duplicate;
+  } catch (e) {
+    return false;
+  }
+}
+
+function submitFeedback(providerId, outcome, reason, otherText) {
+  var state = ensureFeedbackState(providerId);
+  if (state.busy) return Promise.resolve();
+  if (reason === 'other' && !String(otherText || '').trim()) {
+    setFeedbackStatus(providerId, 'Add a quick note or choose a different option.', 'error');
+    return Promise.resolve();
+  }
+  if (localFeedbackDuplicate(providerId, outcome, reason)) {
+    showFeedbackConfirmation(providerId);
+    return Promise.resolve();
+  }
+  initSupabase();
+  state.busy = true;
+  setFeedbackStatus(providerId, '', '');
+  return supabaseClient
+    .from('feedback')
+    .insert({
+      provider_id: providerId,
+      outcome: outcome,
+      reason: reason,
+      other_text: reason === 'other' ? String(otherText || '').trim() : null,
+      zip_code: searchContext.zipCode,
+      session_id: getSessionId()
+    })
+    .then(function(result) {
+      state.busy = false;
+      if (result.error) {
+        setFeedbackStatus(providerId, 'Could not save that feedback. Please try again.', 'error');
+        return;
+      }
+      state.outcome = outcome;
+      showFeedbackConfirmation(providerId);
+    })
+    .catch(function() {
+      state.busy = false;
+      setFeedbackStatus(providerId, 'Could not save that feedback. Please try again.', 'error');
+    });
+}
+
+document.addEventListener('click', function(e) {
+  var outcomeBtn = e.target.closest('[data-feedback-outcome]');
+  if (outcomeBtn) {
+    var providerId = outcomeBtn.getAttribute('data-provider-id');
+    var outcome = outcomeBtn.getAttribute('data-feedback-outcome');
+    var state = ensureFeedbackState(providerId);
+    state.outcome = outcome;
+    state.openOutcome = outcome;
+    state.selectedReason = null;
+    state.otherOpen = false;
+    state.otherText = '';
+    state.status = '';
+    state.statusType = '';
+    rerenderFeedback(providerId);
+    return;
+  }
+
+  var chipBtn = e.target.closest('[data-feedback-chip]');
+  if (chipBtn) {
+    var chipProviderId = chipBtn.getAttribute('data-provider-id');
+    var chipOutcome = chipBtn.getAttribute('data-outcome');
+    var reason = chipBtn.getAttribute('data-feedback-chip');
+    var chipState = ensureFeedbackState(chipProviderId);
+    chipState.selectedReason = reason;
+    chipState.status = '';
+    chipState.statusType = '';
+    if (reason === 'other') {
+      chipState.otherOpen = true;
+      rerenderFeedback(chipProviderId);
+      var input = document.querySelector('[data-feedback-other="' + chipProviderId + '"]');
+      if (input) input.focus();
+      return;
+    }
+    chipState.otherOpen = false;
+    rerenderFeedback(chipProviderId);
+    window.setTimeout(function() {
+      submitFeedback(chipProviderId, chipOutcome, reason, null);
+    }, 600);
+  }
+});
+
+document.addEventListener('input', function(e) {
+  if (!e.target.matches('[data-feedback-other]')) return;
+  var providerId = e.target.getAttribute('data-feedback-other');
+  ensureFeedbackState(providerId).otherText = e.target.value;
+});
+
+document.addEventListener('keydown', function(e) {
+  if (!e.target.matches('[data-feedback-other]')) return;
+  if (e.key !== 'Enter') return;
+  e.preventDefault();
+  var providerId = e.target.getAttribute('data-feedback-other');
+  var state = ensureFeedbackState(providerId);
+  submitFeedback(providerId, state.openOutcome, 'other', e.target.value);
+});
+
+document.addEventListener('blur', function(e) {
+  if (!e.target.matches('[data-feedback-other]')) return;
+  var providerId = e.target.getAttribute('data-feedback-other');
+  var state = ensureFeedbackState(providerId);
+  if (String(e.target.value || '').trim()) {
+    submitFeedback(providerId, state.openOutcome, 'other', e.target.value);
+  }
+}, true);
+
 // ── HTML escape ───────────────────────────────────────────────────────────────
 function esc(s) {
   return String(s)
@@ -800,7 +1096,7 @@ function esc(s) {
 // ── Init ──────────────────────────────────────────────────────────────────────
 fetch('providers.json')
   .then(function(r) { return r.json(); })
-  .then(function(data) { providers = data; });
+  .then(function(data) { providers = data; initSupabase(); getSessionId(); });
 
 show('home');
 </script>
