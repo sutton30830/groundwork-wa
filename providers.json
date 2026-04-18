@@ -55,9 +55,10 @@
       "youth"
     ],
     "area": "Seattle \u2013 Central District",
-    "notes": "",
+    "notes": "Primarily serves children and youth ages 6 to 24, and sometimes caregivers, in King County or Seattle. Free counseling services are available for people already enrolled in Medicaid or eligible for Medicaid funding; Atlantic Street says staff can help families apply. Private insurance is not accepted. To get started, use the referral form, email referrals@atlanticstreet.org, call the front desk at 206-329-2050, or leave a message on the Referral Line at 206-561-4978.",
     "active": true,
-    "website": "https://www.atlanticstreet.org"
+    "website": "https://www.atlanticstreet.org",
+    "intake_form_url": "https://atlanticstreetcenter.org/wp-content/uploads/2026/03/BH-Referral-Form-Rev-032026.pdf"
   },
   {
     "id": "chs-lynnwood",
