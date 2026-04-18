@@ -419,9 +419,10 @@
       "youth"
     ],
     "area": "Renton / South King County",
-    "notes": "Services for sexual assault and child sexual abuse survivors.",
+    "notes": "Supports sexual assault and child sexual abuse survivors. Use the online form to request help and include the language you would like an interpreter to speak, and KCSARC says someone who speaks that language will call you back. If you prefer not to use the form or want to remain anonymous, call 1-888-998-6423 any time.",
     "active": true,
-    "website": "https://www.kcsarc.org"
+    "website": "https://www.kcsarc.org",
+    "intake_form_url": "https://www.kcsarc.org/en/get-help-now/"
   },
   {
     "id": "muckleshoot-tribe",
