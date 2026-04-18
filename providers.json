@@ -945,9 +945,10 @@
       "families"
     ],
     "area": "West Seattle / Burien",
-    "notes": "Open to all King County residents.",
+    "notes": "Provides trauma-informed counseling for youth ages 6 to 24 in West Seattle and southwest King County. To get started, call 206-937-7680 and ask to speak with the Intake Specialist, email info@swyfs.org, or stop by Monday through Thursday from 9:00 AM to 5:00 PM or Friday from 9:00 AM to 3:00 PM. Counseling may be available in the office, in schools, or by telehealth. SWYFS is not currently accepting private insurance. Spanish-speaking referrals are not available at this time.",
     "active": true,
-    "website": "https://www.swyfs.org"
+    "website": "https://www.swyfs.org",
+    "intake_form_url": "https://swyfs.formstack.com/forms/request_for_counseling"
   },
   {
     "id": "ths-kent",
