@@ -108,10 +108,17 @@
     .prov-dist{font-size:.8rem;font-weight:600;color:var(--green);background:var(--green-light);padding:3px 9px;border-radius:20px;white-space:nowrap;flex-shrink:0;margin-top:2px}
     .prov-area{font-size:.85rem;color:var(--muted);margin-bottom:3px}
     .prov-addr{font-size:.85rem;color:var(--muted);margin-bottom:12px}
-    .prov-notes{font-size:.83rem;color:#7a6e63;background:var(--cream-dark);border-radius:6px;padding:8px 11px;margin-bottom:12px;line-height:1.45}
-    .prov-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .prov-notes{font-size:.83rem;color:#7a6e63;background:var(--cream-dark);border-radius:6px;padding:10px 11px;margin-bottom:12px;line-height:1.45}
+    .prov-notes strong{color:#5f544a}
+    .prov-note-rest{display:none;margin-top:6px}
+    .prov-note-rest.show{display:block}
+    .prov-note-toggle{display:inline-block;margin-top:8px;padding:0;border:0;background:transparent;color:var(--green);font-size:.85rem;font-weight:600;font-family:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+    .prov-actions{display:flex;flex-direction:column;align-items:stretch;gap:10px}
     .call-btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:16px 22px;background:var(--green);color:#fff;border-radius:8px;font-size:1.2rem;font-weight:700;text-decoration:none;transition:background .15s;width:100%;margin-bottom:10px}
     .call-btn:hover{background:var(--green-dark)}
+    .intake-btn{display:flex;align-items:center;justify-content:center;padding:13px 18px;background:var(--white);color:var(--green);border:1.5px solid var(--green);border-radius:8px;font-size:.98rem;font-weight:700;text-decoration:none;transition:background .15s,color .15s}
+    .intake-btn:hover{background:var(--green);color:#fff}
+    .prov-links{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
     .feedback-wrap{margin-top:6px;padding-top:14px;border-top:.5px solid var(--border)}
     .feedback-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
     .feedback-label{font-size:.9rem;font-weight:600;color:var(--muted);margin-right:auto}
@@ -814,7 +821,7 @@ function showResults(userLat, userLng, locationLabel) {
 
   // Context bar
   var locText = locationLabel ? 'Near: <span>' + esc(locationLabel) + '</span>' : 'Using your location';
-  var extra   = ' &nbsp;·&nbsp; Showing all Apple Health providers';
+  var extra   = ' &nbsp;·&nbsp; Showing <span>' + sorted.length + ' provider' + (sorted.length === 1 ? '' : 's') + '</span>';
   document.getElementById('ctx-bar').innerHTML = locText + extra;
 
   // Provider cards
@@ -822,10 +829,15 @@ function showResults(userLat, userLng, locationLabel) {
   function renderCard(item) {
     var p = item.p, d = item.d;
     var distStr = d < 1 ? 'Less than 1 mile' : (d.toFixed(1) + ' miles away');
-    var notes   = p.notes ? '<div class="prov-notes">' + esc(p.notes) + '</div>' : '';
+    var notes   = renderNote(p.notes, p.id);
     var phone   = p.phone.replace(/[^0-9]/g, '');
     var maps    = 'https://maps.google.com/?q=' + encodeURIComponent(p.address);
     var feedback = renderFeedback(p.id);
+    var intakeAction = p.intake_form_url ? '<a class="intake-btn" href="' + esc(p.intake_form_url) + '" target="_blank" rel="noopener">Open intake form</a>' : '';
+    var links = '<div class="prov-links">' +
+      '<a class="dir-link" href="' + maps + '" target="_blank" rel="noopener">Get directions</a>' +
+      (p.website ? '<a class="web-link" href="' + esc(p.website) + '" target="_blank" rel="noopener">Website</a>' : '') +
+      '</div>';
     return '<div class="prov-card">' +
       '<div class="prov-top">' +
         '<div class="prov-name">' + esc(p.name) + '</div>' +
@@ -836,9 +848,8 @@ function showResults(userLat, userLng, locationLabel) {
       notes +
       '<div class="prov-actions">' +
         '<a class="call-btn" href="tel:' + phone + '">Call ' + esc(p.phone) + '</a>' +
-        '<a class="dir-link" href="' + maps + '" target="_blank" rel="noopener">Get directions</a>' +
-        (p.website ? '<a class="web-link" href="' + esc(p.website) + '" target="_blank" rel="noopener">Website</a>' : '') +
-        (p.intake_form_url ? '<a class="web-link" href="' + esc(p.intake_form_url) + '" target="_blank" rel="noopener">Intake form</a>' : '') +
+        intakeAction +
+        links +
       '</div>' + feedback +
     '</div>';
   }
@@ -857,6 +868,45 @@ function showResults(userLat, userLng, locationLabel) {
   }
 
   go('s-results');
+}
+
+function noteLead(text) {
+  if (!text) return '';
+  var trimmed = text.trim();
+  var firstSentenceMatch = trimmed.match(/^.*?[.!?](?:\s|$)/);
+  if (firstSentenceMatch) return firstSentenceMatch[0].trim();
+  if (trimmed.length <= 170) return trimmed;
+  return trimmed.slice(0, 167).trim() + '...';
+}
+
+function noteRemainder(text, lead) {
+  if (!text || !lead) return '';
+  var trimmed = text.trim();
+  if (trimmed.indexOf(lead) !== 0) return '';
+  return trimmed.slice(lead.length).trim();
+}
+
+function renderNote(noteText, providerId) {
+  if (!noteText) return '';
+  var lead = noteLead(noteText);
+  var rest = noteRemainder(noteText, lead);
+  if (!rest) {
+    return '<div class="prov-notes"><strong>Best way to start:</strong> ' + esc(lead) + '</div>';
+  }
+  return '<div class="prov-notes">' +
+    '<strong>Best way to start:</strong> ' + esc(lead) +
+    '<div class="prov-note-rest" id="note-rest-' + esc(providerId) + '">' + esc(rest) + '</div>' +
+    '<button type="button" class="prov-note-toggle" id="note-toggle-' + esc(providerId) + '" onclick="toggleNoteDetails(\'' + esc(providerId) + '\')">More details</button>' +
+  '</div>';
+}
+
+function toggleNoteDetails(providerId) {
+  var rest = document.getElementById('note-rest-' + providerId);
+  var btn = document.getElementById('note-toggle-' + providerId);
+  if (!rest || !btn) return;
+  var isOpen = rest.classList.contains('show');
+  rest.classList.toggle('show', !isOpen);
+  btn.textContent = isOpen ? 'More details' : 'Fewer details';
 }
 
 function ensureFeedbackState(providerId) {
@@ -899,7 +949,7 @@ function renderFeedback(providerId) {
       '</div>';
   }
   var status = state.status ? '<div class="feedback-status' + (state.statusType === 'error' ? ' error' : '') + '">' + esc(state.status) + '</div>' : '';
-  var confirm = '<div class="feedback-confirm' + (state.confirmVisible ? ' show' : '') + '">Thanks - this helps other families find care.</div>';
+  var confirm = '<div class="feedback-confirm' + (state.confirmVisible ? ' show' : '') + '">Thanks - this helps keep Groundwork accurate.</div>';
   return '<div class="feedback-wrap" data-feedback="' + esc(providerId) + '" aria-busy="' + (state.busy ? 'true' : 'false') + '">' +
     '<div class="feedback-row">' +
       '<div class="feedback-label">How did it go?</div>' +
