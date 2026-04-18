@@ -381,9 +381,10 @@
       "families"
     ],
     "area": "Kent",
-    "notes": "",
+    "notes": "Offers counseling for youth up to age 25 and their families in South King County and surrounding areas. KYFS accepts Medicaid and many private insurance plans. Services may be available in the office, by telehealth, or in Kent School District schools. To get started, complete the new client request form, email info@kyfs.org, or call 253-859-0300.",
     "active": true,
-    "website": "https://www.kyfs.org"
+    "website": "https://www.kyfs.org",
+    "intake_form_url": "https://form.ohmd.com/practice/MTY2MjA=/form/isIqv8msrfffR6s4FXWmOcT4dPB2jViI"
   },
   {
     "id": "evergreenhealth-kirkland",
