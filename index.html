@@ -560,48 +560,78 @@ document.getElementById('zip-in').addEventListener('input', function() {
 });
 
 function geocodeAddress(address) {
-  return new Promise(function(resolve, reject) {
-    var callbackName = 'censusGeocodeCb_' + Date.now() + '_' + Math.floor(Math.random() * 10000);
-    var script = document.createElement('script');
-    var timeout = setTimeout(function() {
-      cleanup();
-      reject('That address lookup took too long. Try again, or enter a 5-digit zip code.');
-    }, 10000);
+  function lookup(oneLine) {
+    return new Promise(function(resolve, reject) {
+      var callbackName = 'censusGeocodeCb_' + Date.now() + '_' + Math.floor(Math.random() * 10000);
+      var script = document.createElement('script');
+      var timeout = setTimeout(function() {
+        cleanup();
+        reject(new Error('timeout'));
+      }, 10000);
 
-    function cleanup() {
-      clearTimeout(timeout);
-      if (script.parentNode) script.parentNode.removeChild(script);
-      try { delete window[callbackName]; } catch (e) { window[callbackName] = undefined; }
+      function cleanup() {
+        clearTimeout(timeout);
+        if (script.parentNode) script.parentNode.removeChild(script);
+        try { delete window[callbackName]; } catch (e) { window[callbackName] = undefined; }
+      }
+
+      window[callbackName] = function(data) {
+        cleanup();
+        var matches = data && data.result && data.result.addressMatches;
+        if (!matches || !matches.length) {
+          reject(new Error('no-match'));
+          return;
+        }
+        var best = matches[0];
+        if (!best.coordinates) {
+          reject(new Error('no-coords'));
+          return;
+        }
+        resolve({
+          lat: best.coordinates.y,
+          lng: best.coordinates.x,
+          label: best.matchedAddress || oneLine
+        });
+      };
+
+      script.onerror = function() {
+        cleanup();
+        reject(new Error('unavailable'));
+      };
+
+      script.src = 'https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=' +
+        encodeURIComponent(oneLine) +
+        '&benchmark=Public_AR_Current&format=jsonp&callback=' + callbackName;
+      document.body.appendChild(script);
+    });
+  }
+
+  var trimmed = address.trim();
+  var attempts = [trimmed];
+  var hasZip = /\b\d{5}(?:-\d{4})?\b/.test(trimmed);
+  var hasState = /\bWA\b|\bWashington\b/i.test(trimmed);
+  var hasCityHint = /\bSeattle\b|\bBellevue\b|\bRenton\b|\bKent\b|\bAuburn\b|\bBurien\b|\bKirkland\b|\bRedmond\b|\bBothell\b|\bShoreline\b|\bSeaTac\b|\bFederal Way\b|\bEnumclaw\b|\bIssaquah\b|\bSnoqualmie\b|\bVashon\b|\bTukwila\b|\bDes Moines\b|\bLynnwood\b|\bEdmonds\b|\bNorth Bend\b/i.test(trimmed);
+
+  if (!hasState && !hasZip && !hasCityHint) {
+    attempts.push(trimmed + ', King County, WA');
+    attempts.push(trimmed + ', Seattle, WA');
+  } else if (!hasState && !hasZip) {
+    attempts.push(trimmed + ', WA');
+  }
+
+  var chain = Promise.reject();
+  attempts.forEach(function(oneLine) {
+    chain = chain.catch(function() { return lookup(oneLine); });
+  });
+
+  return chain.catch(function(err) {
+    if (err && err.message === 'unavailable') {
+      throw 'Address lookup is unavailable right now. Try again, or enter a 5-digit zip code.';
     }
-
-    window[callbackName] = function(data) {
-      cleanup();
-      var matches = data && data.result && data.result.addressMatches;
-      if (!matches || !matches.length) {
-        reject('We could not find that address. Try a full street address or a nearby zip code.');
-        return;
-      }
-      var best = matches[0];
-      if (!best.coordinates) {
-        reject('We found that address, but could not place it on the map. Try a nearby zip code.');
-        return;
-      }
-      resolve({
-        lat: best.coordinates.y,
-        lng: best.coordinates.x,
-        label: best.matchedAddress || address
-      });
-    };
-
-    script.onerror = function() {
-      cleanup();
-      reject('Address lookup is unavailable right now. Try again, or enter a 5-digit zip code.');
-    };
-
-    script.src = 'https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=' +
-      encodeURIComponent(address) +
-      '&benchmark=Public_AR_Current&format=jsonp&callback=' + callbackName;
-    document.body.appendChild(script);
+    if (err && err.message === 'timeout') {
+      throw 'That address lookup took too long. Try again, or enter a 5-digit zip code.';
+    }
+    throw 'We could not find that address. Try a full street address, city, or a nearby zip code.';
   });
 }
 
