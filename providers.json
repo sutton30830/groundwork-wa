@@ -982,9 +982,10 @@
       "youth"
     ],
     "area": "Kent",
-    "notes": "",
+    "notes": "Use the Therapeutic Health Services youth and family referral form to get help. THS says the form is securely transmitted to staff, who will contact families within 24 hours. If you need to reach a branch directly right away, call the location phone number listed on this card.",
     "active": true,
-    "website": "https://www.therapeutichealthservices.org"
+    "website": "https://www.therapeutichealthservices.org",
+    "intake_form_url": "https://ths-wa.org/youth-family-services/youth-families-get-help-referral-form/"
   },
   {
     "id": "ths-seattle",
@@ -1002,9 +1003,10 @@
       "families"
     ],
     "area": "Seattle \u2013 Central District",
-    "notes": "",
+    "notes": "Use the Therapeutic Health Services youth and family referral form to get help. THS says the form is securely transmitted to staff, who will contact families within 24 hours. If you need to reach a branch directly right away, call the location phone number listed on this card.",
     "active": true,
-    "website": "https://www.therapeutichealthservices.org"
+    "website": "https://www.therapeutichealthservices.org",
+    "intake_form_url": "https://ths-wa.org/youth-family-services/youth-families-get-help-referral-form/"
   },
   {
     "id": "vc-seattle-downtown",
