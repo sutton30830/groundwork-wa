@@ -285,7 +285,7 @@
           <button class="zip-btn" onclick="submitZip()">Find providers</button>
         </div>
         <p class="zip-err" id="zip-err">Please enter a valid 5-digit zip code or street address.</p>
-        <p class="zip-help">Street address works too. We only use it to sort nearby providers. Address lookup uses OpenStreetMap.</p>
+        <p class="zip-help">Street address works too. We only use it to sort nearby providers. Current-location lookup uses your device location and OpenStreetMap.</p>
         <button class="loc-btn" onclick="useLocation()">Use my current location instead</button>
         <div class="nav-row">
           <button class="back" onclick="goBack()">← Back</button>
@@ -622,6 +622,16 @@ function reverseGeocodeCurrentLocation(lat, lng) {
       if (!data || !data.display_name) {
         throw new Error();
       }
+      var addr = data.address || {};
+      var parts = [];
+      if (addr.road) parts.push(addr.road);
+      if (addr.suburb) parts.push(addr.suburb);
+      else if (addr.neighbourhood) parts.push(addr.neighbourhood);
+      else if (addr.city_district) parts.push(addr.city_district);
+      if (addr.city) parts.push(addr.city);
+      else if (addr.town) parts.push(addr.town);
+      else if (addr.village) parts.push(addr.village);
+      if (parts.length) return parts.join(', ');
       return data.display_name;
     });
 }
@@ -644,7 +654,7 @@ function useLocation() {
           detectedLocation = {
             lat: lat,
             lng: lng,
-            label: label,
+            label: 'your current location',
             inputValue: label
           };
           input.value = label;
@@ -669,7 +679,7 @@ function useLocation() {
       if (locBtn) { locBtn.textContent = 'Use my current location instead'; locBtn.disabled = false; }
       alert('Could not access your location. Please enter a zip code or street address.');
     },
-    { timeout: 8000 }
+    { enableHighAccuracy: true, timeout: 12000, maximumAge: 0 }
   );
 }
 
