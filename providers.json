@@ -500,9 +500,10 @@
       "families"
     ],
     "area": "SeaTac",
-    "notes": "Services for refugee and immigrant populations.",
+    "notes": "Offers multicultural and multilingual emotional support and counseling services for immigrants and refugees, with care provided in your language and grounded in cultural understanding. SeaTac and Kent offer both in-person and remote counseling services. For questions about counseling or help navigating Seattle-area mental health and community resources, email mhnavigation@rewa.org.",
     "active": true,
-    "website": "https://www.rewa.org"
+    "website": "https://www.rewa.org",
+    "intake_form_url": "https://forms.office.com/pages/responsepage.aspx?id=TxHfBwCZkUaFzmI5WSaYgk8-M6RYkB5NqugGr2YWIcNUN1A0SVlNMEVGM0lYNlJNMVZXMjIzQkdLWi4u&route=shorturl"
   },
   {
     "id": "rewa-kent",
@@ -520,9 +521,10 @@
       "families"
     ],
     "area": "Kent",
-    "notes": "Services for refugee and immigrant populations.",
+    "notes": "Offers multicultural and multilingual emotional support and counseling services for immigrants and refugees, with care provided in your language and grounded in cultural understanding. SeaTac and Kent offer both in-person and remote counseling services. For questions about counseling or help navigating Seattle-area mental health and community resources, email mhnavigation@rewa.org.",
     "active": true,
-    "website": "https://www.rewa.org"
+    "website": "https://www.rewa.org",
+    "intake_form_url": "https://forms.office.com/pages/responsepage.aspx?id=TxHfBwCZkUaFzmI5WSaYgk8-M6RYkB5NqugGr2YWIcNUN1A0SVlNMEVGM0lYNlJNMVZXMjIzQkdLWi4u&route=shorturl"
   },
   {
     "id": "ryther-seattle",
