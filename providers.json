@@ -35,8 +35,8 @@
       "youth",
       "older_adults"
     ],
-    "area": "Seattle – Rainier Valley",
-    "notes": "Call first to speak with a screener at (253) 833-7444. Intake support is available Monday through Thursday, 8:30 AM to 6:30 PM, and Friday, 8:30 AM to 5:00 PM. In-person intake assessments are available at neighborhood clinics; call ahead for availability. You can ask for an interpreter or other accommodations when you call. Substance use services are for adults only.",
+    "area": "Seattle \u2013 Rainier Valley",
+    "notes": "Substance use services for adults only.",
     "active": true,
     "website": "https://acrs.org"
   },
@@ -54,7 +54,7 @@
       "adults",
       "youth"
     ],
-    "area": "Seattle – Central District",
+    "area": "Seattle \u2013 Central District",
     "notes": "",
     "active": true,
     "website": "https://www.atlanticstreet.org"
@@ -192,7 +192,7 @@
       "youth",
       "families"
     ],
-    "area": "Seattle – Rainier Valley",
+    "area": "Seattle \u2013 Rainier Valley",
     "notes": "",
     "active": true,
     "website": "https://www.childrenshomesociety.org"
@@ -232,7 +232,7 @@
       "adults",
       "youth"
     ],
-    "area": "Seattle – South Park",
+    "area": "Seattle \u2013 South Park",
     "notes": "Primarily serves Hispanic/Latino community, all ages.",
     "active": true,
     "website": "https://consejocounseling.org"
@@ -251,7 +251,7 @@
       "adults",
       "youth"
     ],
-    "area": "Seattle – Lake City",
+    "area": "Seattle \u2013 Lake City",
     "notes": "Mental health only. Primarily serves Hispanic/Latino community.",
     "active": true,
     "website": "https://consejocounseling.org"
@@ -332,7 +332,7 @@
       "youth",
       "older_adults"
     ],
-    "area": "Seattle – Downtown",
+    "area": "Seattle \u2013 Downtown",
     "notes": "REACH program. Call ahead.",
     "active": true,
     "website": "https://www.evergreentreatment.org"
@@ -471,8 +471,8 @@
       "adults",
       "youth"
     ],
-    "area": "Seattle – West Seattle",
-    "notes": "Call first to speak with a screener at (253) 833-7444. Intake support is available Monday through Thursday, 8:30 AM to 6:30 PM, and Friday, 8:30 AM to 5:00 PM. In-person intake assessments are available at neighborhood clinics; call ahead for availability. You can ask for an interpreter or other accommodations when you call. Substance use services are for adults only.",
+    "area": "Seattle \u2013 West Seattle",
+    "notes": "Substance use services for adults only.",
     "active": true,
     "website": "https://www.navos.org"
   },
@@ -552,7 +552,7 @@
       "youth",
       "families"
     ],
-    "area": "Seattle – North Seattle",
+    "area": "Seattle \u2013 North Seattle",
     "notes": "",
     "active": true,
     "website": "https://www.ryther.org"
@@ -629,7 +629,7 @@
       "adults",
       "youth"
     ],
-    "area": "Seattle – South Seattle",
+    "area": "Seattle \u2013 South Seattle",
     "notes": "",
     "active": true,
     "website": "https://www.seamar.org/behavioral-health.html"
@@ -689,7 +689,7 @@
       "youth",
       "families"
     ],
-    "area": "Seattle – North Seattle",
+    "area": "Seattle \u2013 North Seattle",
     "notes": "",
     "active": true,
     "website": "https://www.sound.health"
@@ -752,7 +752,7 @@
       "youth",
       "families"
     ],
-    "area": "Seattle – Downtown",
+    "area": "Seattle \u2013 Downtown",
     "notes": "",
     "active": true,
     "website": "https://www.sound.health"
@@ -794,7 +794,7 @@
       "older_adults",
       "families"
     ],
-    "area": "Seattle – Capitol Hill",
+    "area": "Seattle \u2013 Capitol Hill",
     "notes": "",
     "active": true,
     "website": "https://www.sound.health"
@@ -833,14 +833,14 @@
     "groups_served": [
       "youth"
     ],
-    "area": "Seattle – Rainier Valley",
+    "area": "Seattle \u2013 Rainier Valley",
     "notes": "Youth services only.",
     "active": true,
     "website": "https://www.sound.health"
   },
   {
     "id": "sound-lgbtq-snoqualmie",
-    "name": "Sound – LGBTQ Youth Services",
+    "name": "Sound \u2013 LGBTQ Youth Services",
     "address": "7713 Center Blvd SE, Snoqualmie, WA 98065",
     "lat": 47.5246,
     "lng": -121.845,
@@ -873,7 +873,7 @@
       "youth",
       "families"
     ],
-    "area": "Seattle – Northgate",
+    "area": "Seattle \u2013 Northgate",
     "notes": "",
     "active": true,
     "website": "https://www.sound.health"
@@ -996,7 +996,7 @@
       "youth",
       "families"
     ],
-    "area": "Seattle – Central District",
+    "area": "Seattle \u2013 Central District",
     "notes": "",
     "active": true,
     "website": "https://www.therapeutichealthservices.org"
@@ -1016,7 +1016,7 @@
       "adults",
       "youth"
     ],
-    "area": "Seattle – Downtown",
+    "area": "Seattle \u2013 Downtown",
     "notes": "Call first to speak with a screener at (253) 833-7444. Intake support is available Monday through Thursday, 8:30 AM to 6:30 PM, and Friday, 8:30 AM to 5:00 PM. In-person intake assessments are available at neighborhood clinics; call ahead for availability. You can ask for an interpreter or other accommodations when you call. Substance use services are for adults only.",
     "active": true,
     "website": "https://www.valleycities.org"
@@ -1082,7 +1082,7 @@
       "older_adults",
       "families"
     ],
-    "area": "Seattle – North Seattle",
+    "area": "Seattle \u2013 North Seattle",
     "notes": "Call first to speak with a screener at (253) 833-7444. Intake support is available Monday through Thursday, 8:30 AM to 6:30 PM, and Friday, 8:30 AM to 5:00 PM. In-person intake assessments are available at neighborhood clinics; call ahead for availability. You can ask for an interpreter or other accommodations when you call. Substance use services are for adults only.",
     "active": true,
     "website": "https://www.valleycities.org"
@@ -1126,7 +1126,7 @@
       "older_adults",
       "families"
     ],
-    "area": "Seattle – South Seattle",
+    "area": "Seattle \u2013 South Seattle",
     "notes": "Call first to speak with a screener at (253) 833-7444. Intake support is available Monday through Thursday, 8:30 AM to 6:30 PM, and Friday, 8:30 AM to 5:00 PM. In-person intake assessments are available at neighborhood clinics; call ahead for availability. You can ask for an interpreter or other accommodations when you call. Substance use services are for adults only.",
     "active": true,
     "website": "https://www.valleycities.org"
@@ -1193,7 +1193,7 @@
       "families"
     ],
     "area": "Enumclaw",
-    "notes": "Substance use services for adults only.",
+    "notes": "Call first to speak with a screener at (253) 833-7444. Intake support is available Monday through Thursday, 8:30 AM to 6:30 PM, and Friday, 8:30 AM to 5:00 PM. In-person intake assessments are available at neighborhood clinics; call ahead for availability. You can ask for an interpreter or other accommodations when you call. Substance use services are for adults only.",
     "active": true,
     "website": "https://www.valleycities.org"
   },
@@ -1212,8 +1212,8 @@
       "adults",
       "youth"
     ],
-    "area": "Seattle – North Seattle",
-    "notes": "Substance use services for adults only.",
+    "area": "Seattle \u2013 North Seattle",
+    "notes": "Call first to speak with a screener at (253) 833-7444. Intake support is available Monday through Thursday, 8:30 AM to 6:30 PM, and Friday, 8:30 AM to 5:00 PM. In-person intake assessments are available at neighborhood clinics; call ahead for availability. You can ask for an interpreter or other accommodations when you call. Substance use services are for adults only.",
     "active": true,
     "website": "https://www.valleycities.org"
   },
@@ -1255,7 +1255,7 @@
       "older_adults",
       "families"
     ],
-    "area": "Seattle – Central District",
+    "area": "Seattle \u2013 Central District",
     "notes": "",
     "active": true,
     "website": "https://www.seattleymca.org/behavioral-health"
