@@ -319,7 +319,7 @@
   {
     "id": "evergreen-treatment-seattle",
     "name": "Evergreen Treatment Services",
-    "address": "2133 3rd Ave, Seattle, WA 98121",
+    "address": "2133 3rd Ave, Suite 116, Seattle, WA 98121",
     "lat": 47.6157,
     "lng": -122.3441,
     "phone": "206-432-3574",
@@ -333,7 +333,7 @@
       "older_adults"
     ],
     "area": "Seattle \u2013 Downtown",
-    "notes": "REACH program. Call ahead.",
+    "notes": "REACH serves King County residents with significant medical or mental health needs who are experiencing homelessness. Clients must be age 18 and older, or ages 16 to 18 with parental consent. Service hours are Monday, Wednesday, and Friday from 9:00 AM to 3:00 PM, and Tuesday and Thursday from 9:00 AM to 2:00 PM. Office hours are Monday through Friday, 8:30 AM to 4:30 PM.",
     "active": true,
     "website": "https://www.evergreentreatment.org"
   },
