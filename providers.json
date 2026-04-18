@@ -259,7 +259,7 @@
   {
     "id": "consejo-bellevue",
     "name": "Consejo Counseling and Referral Services",
-    "address": "13343 Bel-Red Road, Bellevue, WA 98005",
+    "address": "13343 Bel-Red Rd, Suite 110, Bellevue, WA 98005",
     "lat": 47.6378,
     "lng": -122.16,
     "phone": "425-679-0801",
@@ -272,9 +272,9 @@
       "youth"
     ],
     "area": "Bellevue",
-    "notes": "Primarily serves Hispanic/Latino community, all ages.",
+    "notes": "Contact the Bellevue clinic directly at 425-679-0801 or visit consejocounseling.org to get started. Open Monday through Friday, 8:00 AM to 5:00 PM. Offers mental health outpatient services, domestic violence survivor services, children, youth, and family services, and transitional housing.",
     "active": true,
-    "website": "https://consejocounseling.org"
+    "website": "https://www.consejocounseling.org"
   },
   {
     "id": "consejo-renton",
