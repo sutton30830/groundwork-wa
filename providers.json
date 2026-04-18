@@ -641,9 +641,10 @@
       "families"
     ],
     "area": "Tukwila",
-    "notes": "Youth and family services only.",
+    "notes": "Youth and family services only. For outpatient enrollment or referrals in King County, Seneca lists 206-948-0096. Families can also use the Washington referral form below.",
     "active": true,
-    "website": "https://www.senecafoa.org"
+    "website": "https://www.senecafoa.org",
+    "intake_form_url": "https://senecafoa.org/washington-referral/"
   },
   {
     "id": "snoqualmie-tribe",
