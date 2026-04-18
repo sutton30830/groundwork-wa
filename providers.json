@@ -15,7 +15,7 @@
       "older_adults"
     ],
     "area": "Bellevue",
-    "notes": "Individuals must be enrolled in the ACRS Behavioral Health program to receive these services. To check eligibility, contact the Mental Health Intake team at mhintake@acrs.org or call 206-695-7511.",
+    "notes": "Individuals must be enrolled in the ACRS Behavioral Health program to receive these services. To check eligibility, contact the Mental Health Intake team at mhintake@acrs.org or call 206-695-7511. You can also fill out the intake form below.",
     "active": true,
     "website": "https://acrs.org",
     "intake_form_url": "https://forms.office.com/pages/responsepage.aspx?id=IAvw8VSCu0O02JjcWUNjlPA5V-NQFlBBu_QP6otDizhUQ1hFSzRCUlcwRktaQ083TVpENEVKVFU3Qy4u&origin=QRCode&route=shorturl"
@@ -37,7 +37,7 @@
       "older_adults"
     ],
     "area": "Seattle \u2013 Rainier Valley",
-    "notes": "Individuals must be enrolled in the ACRS Behavioral Health program to receive these services. To check eligibility, contact the Mental Health Intake team at mhintake@acrs.org or call 206-695-7511. Substance use services at this location are for adults only.",
+    "notes": "Individuals must be enrolled in the ACRS Behavioral Health program to receive these services. To check eligibility, contact the Mental Health Intake team at mhintake@acrs.org or call 206-695-7511. You can also fill out the intake form below. Substance use services at this location are for adults only.",
     "active": true,
     "website": "https://acrs.org",
     "intake_form_url": "https://forms.office.com/pages/responsepage.aspx?id=IAvw8VSCu0O02JjcWUNjlPA5V-NQFlBBu_QP6otDizhUQ1hFSzRCUlcwRktaQ083TVpENEVKVFU3Qy4u&origin=QRCode&route=shorturl"
@@ -302,26 +302,6 @@
     "notes": "Contact the Renton clinic directly at 206-461-4880 or visit consejocounseling.org to get started. Consejo says the next step is a no-cost initial consultation to review eligibility, understand your needs, and determine how they can best support you. Open Monday through Friday, 8:00 AM to 5:00 PM.",
     "active": true,
     "website": "https://www.consejocounseling.org"
-  },
-  {
-    "id": "eating-recovery-bellevue",
-    "name": "Eating Recovery Center of Washington",
-    "address": "1231 116th Avenue NE, Bellevue, WA 98004",
-    "lat": 47.6204,
-    "lng": -122.17,
-    "phone": "425-214-9321",
-    "services": [
-      "mental_health"
-    ],
-    "groups_served": [
-      "adults",
-      "youth",
-      "older_adults"
-    ],
-    "area": "Bellevue",
-    "notes": "Eating disorders only. By referral only.",
-    "active": true,
-    "website": "https://www.eatingrecoverycenter.com/locations/seattle"
   },
   {
     "id": "evergreen-treatment-seattle",
