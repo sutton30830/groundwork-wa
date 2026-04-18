@@ -70,11 +70,12 @@
 
     /* Zip step */
     .zip-row{display:flex;gap:12px}
-    .zip-in{flex:1;padding:16px 18px;font-size:1.25rem;border:2px solid var(--border);border-radius:var(--radius);background:var(--white);color:var(--text);letter-spacing:.1em;font-weight:600;font-family:inherit}
+    .zip-in{flex:1;padding:16px 18px;font-size:1rem;border:2px solid var(--border);border-radius:var(--radius);background:var(--white);color:var(--text);font-weight:500;font-family:inherit}
     .zip-in:focus{outline:none;border-color:var(--green)}
     .zip-btn{padding:16px 28px;background:var(--green);color:#fff;border:none;border-radius:var(--radius);font-size:1rem;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .15s}
     .zip-btn:hover{background:var(--green-dark)}
     .zip-err{color:#c0392b;font-size:.87rem;margin-top:8px;display:none}
+    .zip-help{font-size:.87rem;color:var(--muted);margin-top:10px;line-height:1.5}
     .loc-btn{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:.87rem;color:var(--muted);cursor:pointer;background:none;border:none;padding:0;text-decoration:underline;text-underline-offset:2px;font-family:inherit}
     .loc-btn:hover{color:var(--green)}
 
@@ -277,13 +278,14 @@
       <!-- Step 2 -->
       <div class="step" id="s-zip">
         <div class="step-label">Step 2 of 2</div>
-        <h2 class="step-q">What's your zip code?</h2>
-        <p class="step-sub">We'll find the behavioral health agencies closest to you that accept Medicaid and see children.</p>
+        <h2 class="step-q">What's your zip code or address?</h2>
+        <p class="step-sub">Enter a 5-digit zip code or a street address, and we'll sort providers by what's closest to you.</p>
         <div class="zip-row">
-          <input class="zip-in" id="zip-in" type="text" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="98001" autocomplete="postal-code" aria-label="5-digit zip code">
+          <input class="zip-in" id="zip-in" type="text" placeholder="98103 or 2103 S Atlantic St, Seattle" autocomplete="off" aria-label="Zip code or street address">
           <button class="zip-btn" onclick="submitZip()">Find providers</button>
         </div>
-        <p class="zip-err" id="zip-err">Please enter a valid 5-digit zip code.</p>
+        <p class="zip-err" id="zip-err">Please enter a valid 5-digit zip code or street address.</p>
+        <p class="zip-help">Street address works too. We only use it to sort nearby providers.</p>
         <button class="loc-btn" onclick="useLocation()">Use my current location instead</button>
         <div class="nav-row">
           <button class="back" onclick="goBack()">← Back</button>
@@ -511,27 +513,83 @@ function submitZip() {
   var errEl = document.getElementById('zip-err');
   errEl.style.display = 'none';
 
-  // Must be exactly 5 digits
-  if (!/^\d{5}$/.test(raw)) {
-    errEl.textContent = 'Please enter a valid 5-digit zip code (e.g. 98103).';
+  if (!raw) {
+    errEl.textContent = 'Please enter a zip code or street address.';
     errEl.style.display = 'block';
     return;
   }
 
-  var coords = ZIPCODES.zips[raw];
-  if (!coords) {
-    errEl.textContent = 'Zip code ' + raw + ' not found. Try a nearby King County zip code.';
-    errEl.style.display = 'block';
+  if (/^\d{5}$/.test(raw)) {
+    var coords = ZIPCODES.zips[raw];
+    if (!coords) {
+      errEl.textContent = 'Zip code ' + raw + ' not found. Try a nearby King County zip code.';
+      errEl.style.display = 'block';
+      return;
+    }
+    showResults(coords[0], coords[1], raw);
     return;
   }
 
-  showResults(coords[0], coords[1], raw);
+  geocodeAddress(raw)
+    .then(function(match) {
+      showResults(match.lat, match.lng, match.label);
+    })
+    .catch(function(message) {
+      errEl.textContent = message || 'We could not find that address. Try a full street address or a 5-digit zip code.';
+      errEl.style.display = 'block';
+    });
 }
 
 // Enter key on zip input
 document.getElementById('zip-in').onkeydown = function(e) {
   if (e.key === 'Enter') submitZip();
 };
+
+function geocodeAddress(address) {
+  return new Promise(function(resolve, reject) {
+    var callbackName = 'censusGeocodeCb_' + Date.now() + '_' + Math.floor(Math.random() * 10000);
+    var script = document.createElement('script');
+    var timeout = setTimeout(function() {
+      cleanup();
+      reject('That address lookup took too long. Try again, or enter a 5-digit zip code.');
+    }, 10000);
+
+    function cleanup() {
+      clearTimeout(timeout);
+      if (script.parentNode) script.parentNode.removeChild(script);
+      try { delete window[callbackName]; } catch (e) { window[callbackName] = undefined; }
+    }
+
+    window[callbackName] = function(data) {
+      cleanup();
+      var matches = data && data.result && data.result.addressMatches;
+      if (!matches || !matches.length) {
+        reject('We could not find that address. Try a full street address or a nearby zip code.');
+        return;
+      }
+      var best = matches[0];
+      if (!best.coordinates) {
+        reject('We found that address, but could not place it on the map. Try a nearby zip code.');
+        return;
+      }
+      resolve({
+        lat: best.coordinates.y,
+        lng: best.coordinates.x,
+        label: best.matchedAddress || address
+      });
+    };
+
+    script.onerror = function() {
+      cleanup();
+      reject('Address lookup is unavailable right now. Try again, or enter a 5-digit zip code.');
+    };
+
+    script.src = 'https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=' +
+      encodeURIComponent(address) +
+      '&benchmark=Public_AR_Current&format=jsonp&callback=' + callbackName;
+    document.body.appendChild(script);
+  });
+}
 
 // ── Geolocation ───────────────────────────────────────────────────────────────
 function useLocation() {
@@ -578,7 +636,7 @@ function dist(lat1, lng1, lat2, lng2) {
 }
 
 // ── Show results ──────────────────────────────────────────────────────────────
-function showResults(userLat, userLng, zip) {
+function showResults(userLat, userLng, locationLabel) {
   // Filter: active AND serves youth
   var active = providers.filter(function(p) {
     return p.active !== false && p.groups_served.indexOf('youth') !== -1;
@@ -590,7 +648,7 @@ function showResults(userLat, userLng, zip) {
   }).sort(function(a, b) { return a.d - b.d; });
 
   // Context bar
-  var locText = zip ? 'Near zip: <span>' + zip + '</span>' : 'Using your location';
+  var locText = locationLabel ? 'Near: <span>' + esc(locationLabel) + '</span>' : 'Using your location';
   var extra   = ' &nbsp;·&nbsp; Showing all Apple Health providers';
   document.getElementById('ctx-bar').innerHTML = locText + extra;
 
