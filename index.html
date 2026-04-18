@@ -622,16 +622,6 @@ function reverseGeocodeCurrentLocation(lat, lng) {
       if (!data || !data.display_name) {
         throw new Error();
       }
-      var addr = data.address || {};
-      var parts = [];
-      if (addr.road) parts.push(addr.road);
-      if (addr.suburb) parts.push(addr.suburb);
-      else if (addr.neighbourhood) parts.push(addr.neighbourhood);
-      else if (addr.city_district) parts.push(addr.city_district);
-      if (addr.city) parts.push(addr.city);
-      else if (addr.town) parts.push(addr.town);
-      else if (addr.village) parts.push(addr.village);
-      if (parts.length) return parts.join(', ');
       return data.display_name;
     });
 }
@@ -654,7 +644,7 @@ function useLocation() {
           detectedLocation = {
             lat: lat,
             lng: lng,
-            label: 'your current location',
+            label: label,
             inputValue: label
           };
           input.value = label;
