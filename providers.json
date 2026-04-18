@@ -553,9 +553,10 @@
       "families"
     ],
     "area": "Seattle \u2013 North Seattle",
-    "notes": "New clients can call Ryther at 206-517-0234 Monday through Friday, 10:00 AM to 6:00 PM Pacific, or use Ryther's General Intake Form. If you have trouble using the form or prefer to speak with the intake team, call 206-517-0234. Ryther says to allow up to 5 business days for contact.",
+    "notes": "New clients can call Ryther at 206-517-0234 Monday through Friday, 10:00 AM to 6:00 PM Pacific. If you prefer to start online or have trouble reaching the intake team, Ryther also offers a General Intake Form. Ryther says to allow up to 5 business days for contact.",
     "active": true,
-    "website": "https://www.ryther.org"
+    "website": "https://www.ryther.org",
+    "intake_form_url": "https://forms.office.com/pages/responsepage.aspx?id=MlTNYED-gES1Qzjtrahwt90T1RQ91W9KoYQ7KVZmowpURUVaME4xSEdBT0xRN1ZMVkk5VzRIQkRJNy4u&route=shorturl"
   },
   {
     "id": "seamar-federal-way",

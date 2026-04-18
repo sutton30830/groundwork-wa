@@ -614,6 +614,7 @@ function showResults(userLat, userLng, zip) {
         '<a class="call-btn" href="tel:' + phone + '">Call ' + esc(p.phone) + '</a>' +
         '<a class="dir-link" href="' + maps + '" target="_blank" rel="noopener">Get directions</a>' +
         (p.website ? '<a class="web-link" href="' + esc(p.website) + '" target="_blank" rel="noopener">Website</a>' : '') +
+        (p.intake_form_url ? '<a class="web-link" href="' + esc(p.intake_form_url) + '" target="_blank" rel="noopener">Intake form</a>' : '') +
       '</div>' +
     '</div>';
   }
