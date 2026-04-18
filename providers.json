@@ -15,9 +15,10 @@
       "older_adults"
     ],
     "area": "Bellevue",
-    "notes": "For outpatient mental health services ages 6 and up, call CHS Centralized Screening at 206-362-7282 Monday through Friday, 9:00 AM to 5:00 PM. Have your Medicaid/Apple Health or insurance number ready. You may be given an assessment appointment or open access hours depending on the location. CHS says these assessments do not meet requirements for competency or parenting plan evaluations.",
+    "notes": "Individuals must be enrolled in the ACRS Behavioral Health program to receive these services. To check eligibility, contact the Mental Health Intake team at mhintake@acrs.org or call 206-695-7511.",
     "active": true,
-    "website": "https://acrs.org"
+    "website": "https://acrs.org",
+    "intake_form_url": "https://forms.office.com/pages/responsepage.aspx?id=IAvw8VSCu0O02JjcWUNjlPA5V-NQFlBBu_QP6otDizhUQ1hFSzRCUlcwRktaQ083TVpENEVKVFU3Qy4u&origin=QRCode&route=shorturl"
   },
   {
     "id": "acrs-seattle",
@@ -36,9 +37,10 @@
       "older_adults"
     ],
     "area": "Seattle \u2013 Rainier Valley",
-    "notes": "Substance use services for adults only.",
+    "notes": "Individuals must be enrolled in the ACRS Behavioral Health program to receive these services. To check eligibility, contact the Mental Health Intake team at mhintake@acrs.org or call 206-695-7511. Substance use services at this location are for adults only.",
     "active": true,
-    "website": "https://acrs.org"
+    "website": "https://acrs.org",
+    "intake_form_url": "https://forms.office.com/pages/responsepage.aspx?id=IAvw8VSCu0O02JjcWUNjlPA5V-NQFlBBu_QP6otDizhUQ1hFSzRCUlcwRktaQ083TVpENEVKVFU3Qy4u&origin=QRCode&route=shorturl"
   },
   {
     "id": "atlantic-street",
