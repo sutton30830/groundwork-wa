@@ -1257,9 +1257,10 @@
       "families"
     ],
     "area": "Seattle \u2013 Central District",
-    "notes": "",
+    "notes": "Use the YMCA behavioral health form, email counseling@seattleymca.org, or call 206-382-5340 Monday through Friday, 8:30 AM to 4:30 PM, to request an assessment for mental health counseling or substance use treatment. The YMCA serves all ages in King County, including both members and non-members. Medicaid is accepted, and sliding scale financial aid may be available. YMCA says its customer support team will usually contact families within 1 business day to answer questions and schedule an initial consultation.",
     "active": true,
-    "website": "https://www.seattleymca.org/behavioral-health"
+    "website": "https://www.seattleymca.org/behavioral-health",
+    "intake_form_url": "https://forms.office.com/Pages/ResponsePage.aspx?id=seYa2Dd64UeU7olxDG4nCUEEc32Iu0pMoezJV6oLT8BUM1g5SzdPUlNKTExGUUtSWkxJSVdFUTRTWC4u"
   },
   {
     "id": "ymca-auburn",
@@ -1267,7 +1268,7 @@
     "address": "1000 Auburn Way South, Auburn, WA 98002",
     "lat": 47.3029,
     "lng": -122.2115,
-    "phone": "253-740-7189",
+    "phone": "206-382-5340",
     "services": [
       "mental_health",
       "substance_use"
@@ -1279,9 +1280,10 @@
       "families"
     ],
     "area": "Auburn",
-    "notes": "",
+    "notes": "Use the YMCA behavioral health form, email counseling@seattleymca.org, or call 206-382-5340 Monday through Friday, 8:30 AM to 4:30 PM, to request an assessment for mental health counseling or substance use treatment. The YMCA serves all ages in King County, including both members and non-members. Medicaid is accepted, and sliding scale financial aid may be available. YMCA says its customer support team will usually contact families within 1 business day to answer questions and schedule an initial consultation.",
     "active": true,
-    "website": "https://www.seattleymca.org/behavioral-health"
+    "website": "https://www.seattleymca.org/behavioral-health",
+    "intake_form_url": "https://forms.office.com/Pages/ResponsePage.aspx?id=seYa2Dd64UeU7olxDG4nCUEEc32Iu0pMoezJV6oLT8BUM1g5SzdPUlNKTExGUUtSWkxJSVdFUTRTWC4u"
   },
   {
     "id": "ymca-enumclaw",
@@ -1289,7 +1291,7 @@
     "address": "1356 Cole Street, Enumclaw, WA 98022",
     "lat": 47.2034,
     "lng": -121.9942,
-    "phone": "360-825-4586",
+    "phone": "206-382-5340",
     "services": [
       "mental_health",
       "substance_use"
@@ -1301,9 +1303,10 @@
       "families"
     ],
     "area": "Enumclaw",
-    "notes": "Crisis services for youth and special populations.",
+    "notes": "Use the YMCA behavioral health form, email counseling@seattleymca.org, or call 206-382-5340 Monday through Friday, 8:30 AM to 4:30 PM, to request an assessment for mental health counseling or substance use treatment. The YMCA serves all ages in King County, including both members and non-members. Medicaid is accepted, and sliding scale financial aid may be available. YMCA says its customer support team will usually contact families within 1 business day to answer questions and schedule an initial consultation. Crisis services for youth and special populations are also available.",
     "active": true,
-    "website": "https://www.seattleymca.org/behavioral-health"
+    "website": "https://www.seattleymca.org/behavioral-health",
+    "intake_form_url": "https://forms.office.com/Pages/ResponsePage.aspx?id=seYa2Dd64UeU7olxDG4nCUEEc32Iu0pMoezJV6oLT8BUM1g5SzdPUlNKTExGUUtSWkxJSVdFUTRTWC4u"
   },
   {
     "id": "yes-kirkland",
