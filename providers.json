@@ -428,7 +428,7 @@
   {
     "id": "muckleshoot-tribe",
     "name": "Muckleshoot Indian Tribe Behavioral Health",
-    "address": "17813 SE 392nd Street, Auburn, WA 98092",
+    "address": "17500 SE 392nd St, Auburn, WA 98092",
     "lat": 47.2677,
     "lng": -122.0722,
     "phone": "253-333-3605",
@@ -441,9 +441,9 @@
       "youth"
     ],
     "area": "Auburn",
-    "notes": "Primarily serves Native American/Alaskan Native community.",
+    "notes": "Family and Youth Services offers mental health and substance use counseling for youth ages 6 and up and their families at the Muckleshoot Health & Wellness Center. Services may include individual and family counseling, psychiatric care and medication management, school-based counseling, support groups, and parent education. Muckleshoot lists hours Monday through Friday, 8:00 AM to 5:00 PM, with a daily lunch closure from 12:00 PM to 1:00 PM.",
     "active": true,
-    "website": "https://www.muckleshoot.nsn.us/services/health/behavioral-health"
+    "website": "https://www.muckleshoot.nsn.us/programs/behavioral-health-family-youth-services"
   },
   {
     "id": "navos-west-seattle",
@@ -833,7 +833,7 @@
   },
   {
     "id": "sound-lgbtq-snoqualmie",
-    "name": "Sound \u2013 LGBTQ Youth Services",
+    "name": "Sound",
     "address": "7713 Center Blvd SE, Snoqualmie, WA 98065",
     "lat": 47.5246,
     "lng": -121.845,
