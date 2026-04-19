@@ -122,6 +122,7 @@
     .feedback-wrap{margin-top:6px;padding-top:14px;border-top:.5px solid var(--border)}
     .feedback-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
     .feedback-label{font-size:.9rem;font-weight:600;color:var(--muted);margin-right:auto}
+    .feedback-helper{width:100%;margin-top:2px;font-size:.82rem;color:var(--muted)}
     .feedback-btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border:1px solid var(--border);border-radius:20px;background:var(--white);color:var(--text);font-size:.95rem;font-weight:600;cursor:pointer;font-family:inherit;transition:background .15s,border-color .15s,color .15s}
     .feedback-btn:hover{border-color:var(--green)}
     .feedback-btn.active-good{background:#e7f3e8;border-color:#8fba92;color:#245228}
@@ -953,6 +954,7 @@ function renderFeedback(providerId) {
   return '<div class="feedback-wrap" data-feedback="' + esc(providerId) + '" aria-busy="' + (state.busy ? 'true' : 'false') + '">' +
     '<div class="feedback-row">' +
       '<div class="feedback-label">How did it go?</div>' +
+      '<div class="feedback-helper">This helps other families - takes 1 tap.</div>' +
       '<button class="feedback-btn' + (state.outcome === 'got_through' ? ' active-good' : '') + '" type="button" data-feedback-outcome="got_through" data-provider-id="' + esc(providerId) + '" aria-pressed="' + (state.outcome === 'got_through' ? 'true' : 'false') + '">Got through</button>' +
       '<button class="feedback-btn' + (state.outcome === 'no_luck' ? ' active-bad' : '') + '" type="button" data-feedback-outcome="no_luck" data-provider-id="' + esc(providerId) + '" aria-pressed="' + (state.outcome === 'no_luck' ? 'true' : 'false') + '">No luck</button>' +
     '</div>' +
